@@ -45,9 +45,9 @@ function Signup(props) {
 
     const onSubmit = async (request) => {
         setLoader(true);
-        console.log("apiPath?.addUser",apiPath?.addUser)
+        console.log("apiPath?.addUser", apiPath?.addUser)
         try {
-            console.log("apiPath?.addUser",apiPath?.addUser)
+            console.log("apiPath?.addUser", apiPath?.addUser)
             const { status, data: response_users } = await apiPost(
                 apiPath?.addUser,
                 { createdBy: props.id }
@@ -136,7 +136,7 @@ function Signup(props) {
                     id="uncontrolled-tab-example"
                     className="mb-3"
                 >
-                    
+
                     <Tab eventKey="byemail" title="By email">
                         <Form onSubmit={handleSubmit2(onSubmit2)}>
                             <dl className="form-login">
@@ -167,6 +167,89 @@ function Signup(props) {
                   </Form.Select>
 
                 </dd> */}
+                                <dd>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter First Name"
+                                            className={errors2.firstName ? " is-invalid " : ""}
+                                            {...register2("firstName", {
+                                                required: "Please enter first name",
+                                                minLength: {
+                                                    value: 2,
+                                                    message:
+                                                        "First name should contain at least 2 characters.",
+                                                },
+                                                maxLength: {
+                                                    value: 15,
+                                                    message:
+                                                        "First name should contain at least 15 characters.",
+                                                },
+                                            })}
+                                        />
+                                        {errors2.firstName && errors2.firstName.message && (
+                                            <label className="invalid-feedback text-left">
+                                                {errors2.firstName.message}
+                                            </label>
+                                        )}
+                                    </Form.Group>
+                                </dd>
+                                <dd>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Last Name"
+                                            className={errors2.lastName ? " is-invalid " : ""}
+                                            {...register2("lastName", {
+                                                required: "Please enter last name",
+                                                minLength: {
+                                                    value: 2,
+                                                    message:
+                                                        "First name should contain at least 2 characters.",
+                                                },
+                                                maxLength: {
+                                                    value: 15,
+                                                    message:
+                                                        "First name should contain at least 15 characters.",
+                                                },
+                                            })}
+                                        />
+                                        {errors2.lastName && errors2.lastName.message && (
+                                            <label className="invalid-feedback text-left">
+                                                {errors2.lastName.message}
+                                            </label>
+                                        )}
+                                    </Form.Group>
+                                </dd>
+                                <dd>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Mobile Number"
+                                            className={errors2.phone ? " is-invalid " : ""}
+                                            {...register2("phone", {
+                                                required: "Please enter mobile",
+                                                maxLength: {
+                                                    value: 15,
+                                                    message:"Max length is 15 characters.",
+                                                },
+                                                minLength: {
+                                                    value: 8,
+                                                    message: "Min length is 8 characters.",
+                                                },
+                                                pattern: {
+                                                    value: /^[0-9]*$/,
+                                                    message: "Invalid mobile number.",
+                                                },
+                                            })}
+                                        />
+                                        {errors2.phone && errors2.phone.message && (
+                                            <label className="invalid-feedback text-left">
+                                                {errors2.phone.message}
+                                            </label>
+                                        )}
+                                    </Form.Group>
+                                </dd>
                                 <dd>
                                     <Form.Group>
                                         <Form.Control
@@ -272,6 +355,16 @@ function Signup(props) {
                                                     Password does not match.
                                                 </label>
                                             )}
+                                    </Form.Group>
+                                </dd>
+
+                                <dd>
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter Referral Code"
+                                            {...register2("refferedCode")}
+                                        />
                                     </Form.Group>
                                 </dd>
 

@@ -76,7 +76,7 @@ const Myprofile = () => {
             myProfile();
         }
     }, [user]);
-
+    console.log("profileData",profileData)
     return (
         <>
             <section className="py-4 main-inner-outer">
