@@ -103,7 +103,7 @@ function Sports() {
   }, []);
   return (
     <>
-      <a href="javascript:void(0)">
+      {/* <a href="javascript:void(0)">
         <img
           src={
             process.env.REACT_APP_URL +
@@ -111,7 +111,7 @@ function Sports() {
           }
           style={{ width: "100%" }}
         />
-      </a>
+      </a> */}
       <div className="mian-wrap">
         <div id="highlightLabel" className="highlight-fix">
           <a

@@ -93,6 +93,7 @@ const BetHistory = () => {
     const [pageCount, setPageCount] = useState(0);
     const [viewpage, setViewPage] = useState(0);
     const handlePageClick = (event) => {
+        console.log('event: ', event);
         setFilter((prevState) => {
             return {
                 ...prevState,
@@ -230,7 +231,7 @@ const BetHistory = () => {
                                                 />
                                             )}
                                         </Tab> */}
-                                        <Tab eventKey="BookMaker" title="BookMaker">
+                                        {/* <Tab eventKey="BookMaker" title="BookMaker">
                                             {key === "BookMaker" && (
                                                 <ExchangeHistory
                                                     title={key}
@@ -243,7 +244,7 @@ const BetHistory = () => {
                                                     pageCount={pageCount}
                                                 />
                                             )}
-                                        </Tab>
+                                        </Tab> */}
                                         <Tab eventKey="casino" title="Casino">
                                             {key === "casino" && (
                                                 <ExchangeHistory

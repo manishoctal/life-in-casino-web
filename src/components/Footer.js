@@ -67,7 +67,30 @@ const Footer = () => {
             </a>
           </li> */}
 
-          <li id="sports">
+          <li id="home" className={window.location.pathname == '/' ? "select main-nav" : ""}>
+            <Link to="/" neua="Home" className="ui-link">
+              <img
+                className="icon-home"
+                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
+                alt=""
+              />
+              Home
+            </Link>
+          </li>
+
+          <li id="casino" className={window.location.pathname == '/casino-games' ? "select main-nav" : ""}>
+            <Link to="/casino-games" neua="Sports" className="ui-link">
+              <img
+                className=""
+                src={process.env.REACT_APP_URL + "/assets/images/home/casinoFooter.webp"}
+                alt=""
+              // src={process.env.REACT_APP_URL + '/yourPathHere.jpg' }
+              />
+              Casino
+            </Link>
+          </li>
+
+          <li id="sports" className={window.location.pathname == '/sports' ? "select main-nav" : ""}>
             <Link to="/sports" neua="Sports" className="ui-link">
               <img
                 className="icon-sports"
@@ -79,7 +102,7 @@ const Footer = () => {
             </Link>
           </li>
 
-          <li id="inPlay">
+          {/* <li id="inPlay">
             <Link to="/inplay" neua="In-Play" className="ui-link">
               <img
                 className="icon-inplay"
@@ -88,37 +111,26 @@ const Footer = () => {
               />
               In-Play
             </Link>
-          </li>
+          </li> */}
 
-          <li id="home" className="select main-nav">
-            <Link to="/" neua="Home" className="ui-link">
-              <img
-                className="icon-home"
-                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
-                alt=""
-              />
-              Home
-            </Link>
-          </li>
-
-          <li id="multiMarket">
-            <Link to="/multimarket" neua="Multi Markets" className="ui-link">
+          <li id="support">
+            <Link to={"http://Wa.me/+911111111111"} target="_blank" neua="Multi Markets" className="ui-link">
               <img
                 className="icon-pin"
                 src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
                 alt=""
               />
-              Multi Markets
+              Support
             </Link>
           </li>
-          <li id="account">
+          <li id="account" className={window.location.pathname == '/profile' ? "select main-nav" : ""}>
             <Link to={user ? "/profile" : "/login"}>
               <img
                 className="icon-account"
                 src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
                 alt=""
               />
-              Account
+              {!isEmpty(user) ? "Account" : "Login"}
             </Link>
           </li>
         </ul>

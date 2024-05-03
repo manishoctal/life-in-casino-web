@@ -262,7 +262,7 @@ const ProfitLoss = () => {
                                                 />
                                             )}
                                         </Tab> */}
-                                            <Tab eventKey="BookMaker" title="BookMaker">
+                                            {/* <Tab eventKey="BookMaker" title="BookMaker">
                                                 {key === "BookMaker" && (
                                                     <ProfitLossHistory
                                                         betType={"bookmaker"}
@@ -276,7 +276,7 @@ const ProfitLoss = () => {
                                                         pageCount={pageCount}
                                                     />
                                                 )}
-                                            </Tab>
+                                            </Tab> */}
                                             <Tab eventKey="casino" title="Casino">
                                                 {key === "casino" && (
                                                     <ProfitLossHistory

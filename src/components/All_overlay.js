@@ -9,6 +9,7 @@ import Openbets from "./Openbets";
 import Setting from "./Setting";
 import Anouncement from "./Anouncement";
 import SearchWrap from "./SearchWrap";
+import SearchWrapCasino from "./SearchWrapCasino";
 import Loader from "./Loader";
 import BetPlacePopup from "./BetPlacePopup";
 import WalletWrap from "./WalletWrap";
@@ -31,6 +32,7 @@ function AllOverlay() {
       <BookPosition/>
       <BetPlacePopup />
       <SearchWrap />
+      <SearchWrapCasino />
       <Loader />
       <FancyBetRulesWrap />
       <Anouncement />

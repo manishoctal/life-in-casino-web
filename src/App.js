@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "@fortawesome/fontawesome-free/css/all.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css"; 
 import "../src/assets/css/sky.css";
 // import "../src/assets/css/style.css";
 // import "../src/assets/css/responsive.css";
@@ -44,21 +46,47 @@ import BetHistory from "./pages/BetHistory/BetHistory";
 import ProfitLoss from "./pages/ProfitLoss/ProfitLoss";
 import Activitylog from "./pages/Activitylog";
 import Accountstatement from "./pages/Accountstatement";
+import WebView from "./pages/WebView";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
   let { user } = useContext(AuthProvider);
+  const [redirected, setRedirected] = useState(false);
+
+  // useEffect(() => {
+  //   if (isEmpty(user)) {
+  //     navigate("/");
+  //   }
+  // }, [user]);
+
   useEffect(() => {
-    if (isEmpty(user)) {
-      navigate("/");
+    const handleResize = () => {
+      if (window.innerWidth > 767 && !redirected) {
+        // Redirect the user to the mobile app installation page
+        setRedirected(true);
+        window.location.href = '/web-view';
+      }
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Check screen size on component mount
+    if(window?.location?.pathname !== '/web-view'){
+      handleResize();
     }
-  }, [user]);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [redirected]);
 
   return (
     <div className="App">
       <AllOverlay />
       <wc-toast position="top-right"></wc-toast>
-      {location.pathname !== "/login" && location.pathname !== "/blog" && (
+      {location.pathname !== "/login" && location.pathname !== "/blog" && location.pathname !== "/web-view" &&(
         <Header />
       )}
       <Routes>
@@ -87,6 +115,7 @@ function App() {
         <Route exact path="/betshistory" element={<BetHistory />}></Route>
         <Route exact path="/profit_loss" element={<ProfitLoss />}></Route>
         <Route exact path="/account-statement" element={<Accountstatement />}></Route>
+        <Route exact path="/web-view" element={<WebView />}></Route>
         {/* <Route exact path="/activity-logs" element={<Activitylog />}></Route> */}
         <Route
           exact
@@ -94,7 +123,7 @@ function App() {
           element={<BidDetail />}
         ></Route>
       </Routes>
-      {location.pathname !== "/login" && location.pathname !== "/blog" && (
+      {location.pathname !== "/login" && location.pathname !== "/blog" && location.pathname !== "/web-view" &&(
         <Footer />
       )}
     </div>

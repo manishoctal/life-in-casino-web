@@ -137,7 +137,7 @@ function Signup(props) {
                     className="mb-3"
                 >
 
-                    <Tab eventKey="byemail" title="By email">
+                    <Tab eventKey="byemail">
                         <Form onSubmit={handleSubmit2(onSubmit2)}>
                             <dl className="form-login">
 

@@ -31,6 +31,7 @@ export const AuthProvider = ({ children }) => {
   const [loader, setLoader] = useState(false);
   const [openBetsToogle, setOpenBetsToogle] = useState(false);
   const [searchToogle, setSearchToogle] = useState(false);
+  const [searchToogleCasino, setSearchToogleCasino] = useState(false);
   const [settingToogle, setSettingToogle] = useState(false);
   const [announcmentToogle, setAnnouncmentToogle] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
@@ -221,7 +222,9 @@ export const AuthProvider = ({ children }) => {
     setVendor,
     setPaymentModel, paymentModel, paymentObj, setPaymentObj, setShowModel, show_model, setOneClickData, oneClickData,
     setCasinoGameUrl,
-    casinoGameUrl
+    casinoGameUrl,
+    searchToogleCasino,
+    setSearchToogleCasino
 
   };
   return (

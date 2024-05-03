@@ -120,24 +120,7 @@ const Header = () => {
       mainBalanceClick();
     }
   }, [user]);
-  const [message, setMessage] = useState([]);
-  const messageList = async () => {
-    let hostname = window.location.hostname;
-    hostname = hostname.replace(/^www\./, '');
-    hostname = hostname.replace(/^ag\./, '');
-    hostname = hostname || "sabaexch.com";
-
-    const { status, data: response_users } = await apiGet(apiPath.messageList + "?domain=" + hostname);
-    if (status === 200) {
-      if (response_users.success) {
-        setMessage(response_users.results);
-
-      }
-    }
-  };
-  useEffect(() => {
-    messageList();
-  }, []);
+  
   // useEffect(() => {
   //   if (isEmpty(user_coins)) {
   //     setUserCoins({
@@ -151,7 +134,7 @@ const Header = () => {
       {!isEmpty(user) && (
         <header id="headerMain1">
           <ul>
-            <li className="logo"><img src={process.env.REACT_APP_URL + "/assets/images/logo2.png"} alt="img" /></li>
+            <li className="logo logoInner"><img src={process.env.REACT_APP_URL + "/assets/images/logo.svg"} alt="img" /></li>
             {/* <li><h6 className="top-logo"></h6></li> */}
             <li className="li-tv_bet">
               {location?.pathname?.split("/")[1] == "match-details" &&
@@ -362,35 +345,9 @@ const Header = () => {
           </div>
         </header>
       )}
-      {!isEmpty(user) && (
-        <div
-          id="headerMain2"
-          className="marquee-box"
-          style={{ display: "flex" }}
-        >
-          <h4>News</h4>
-          <div
-            class="marquee"
-            onClick={() => {
-              setAnnouncmentToogle(message.length > 0 ? true : false);
-            }}
-          >
-            <marquee class="js-marquee-wrapper">
-              <div class="js-marquee">
-                {message?.length > 0 &&
-                  message?.map((item) => {
-                    return (
-                      <a>
-                        <span> {obj.msgDateFormat(item.msgDate)}</span>
-                        {item.message}
-                      </a>
-                    );
-                  })}
-              </div>
-            </marquee>
-          </div>
-        </div>
-      )}
+      {/* {!isEmpty(user) && ( */}
+        
+      {/* )} */}
     </>
   );
 };

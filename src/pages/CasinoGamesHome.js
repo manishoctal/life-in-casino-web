@@ -14,6 +14,7 @@ function CasinoGames() {
   const [vendors, setVendors] = useState();
   const [vendor, setVendor] = useState();
   const [games, setGames] = useState([]);
+  const [searchKey, setSearchKey] = useState(location?.state?.searchKey ? "Evolution Top Games" : "");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(21);
   const [showLoadMore, setShowLoadMore] = useState(true);
@@ -24,8 +25,7 @@ function CasinoGames() {
   });
 
   var settings = {
-    dots: false,
-    arrows:false,
+    dots: true,
     infinite: true,
     centerMode: false,
     navigator:false,
@@ -35,6 +35,7 @@ function CasinoGames() {
   };
 
   const handlePageClick = (event) => {
+    
     setSearchParams((prevState) => {
       return {
         ...prevState,
@@ -44,7 +45,7 @@ function CasinoGames() {
   };
 
   const navigate = useNavigate();
-  let { user, setCasinoGameUrl, setLoader, user_coins, loader, setSearchToogleCasino } = useContext(AuthProvider);
+  let { user, setCasinoGameUrl, setLoader, user_coins, loader } = useContext(AuthProvider);
 
   const casinoVenders = async () => {
     try {
@@ -86,13 +87,17 @@ function CasinoGames() {
     console.log("vendor: ", vendor);
     try {
       setLoader(true);
-      const { status, data: response } = await apiGet(apiPath.casinoGamesList, { provider: vendor, pageSize });
+      const { status, data: response } = await apiGet(apiPath.casinoGamesList, { provider: vendor, searchKey, pageSize });
       if (status === 200) {
         if (!response.error) {
           if (response.data) {
             setLoader(false);
+            // if (searchKey) {
+            //     setGames(response.data);
+            // } else {
             setGames(response.data);
             setPageCount(response.totalPages);
+            // }
             if (response.hasNextPage) {
               setShowLoadMore(true);
             } else {
@@ -137,55 +142,62 @@ function CasinoGames() {
   };
 
   useEffect(() => {
+    
     casinoGamesList(vendor);
-  }, [vendor, search_params, pageSize]);
+  }, [vendor, searchKey, search_params, pageSize]);
   useEffect(() => {
     casinoVenders();
   }, []);
   return (
     <div>
-
-<Slider {...settings} className="GameSlider innerSlider">
-
+      <Slider {...settings} className="GameSlider">
+           
       {vendors?.length > 0
         ? vendors.map((item, index) => {
             if (item != "") {
               return (
+                
+
+              
+                <div className="gameCTG">
                 <a
                   key={index}
                   className={item.name == vendor ? "entrance active" : "entrance"}
                   href="javascript:void(0)"
                   onClick={() => {
+                    // if (!isEmpty(user)) {
+                    if (item.name == "Evolution Gaming") {
+                      setVendor("DC");
+                      // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
+                    } else {
                       setVendor(item.name);
-                      navigate("/casino-games")
+                      // navigate("/casino-games");
+                    }
+                    // } else {
+                    //   navigate("/login");
+                    // }
                   }}
                 >
                   <dt>{item?.name}</dt>
-                  <span>
-                  <img className="withoutHover"src="/assets/images/home/Gamelive.svg" alt=""/>
-                  <img className="onhover" src="/assets/images/home/hover-live.svg" alt=""/>
-                  </span>
+                  <span><img src="/assets/images/home/casinoGirl.png" alt=""/></span>
                 </a>
+                </div>
+          
+  
+
+          
+
+
               );
             }
+            
           })
+          
         : ""}
-
-</Slider>
-
-      <div>
-        <a
-            className="a-search innerSearch"
-            onClick={() => setSearchToogleCasino(true)}
-            href="javascript:void(0)"
-          >
-            Search
-          </a>
-      </div>
-
+        </Slider>
       <div id="page">
         <div className="mian-wrap">
-          <div className="gamehall innerPageList">
+          <div className="gamehall homepageList">
             {games.length > 0
               ? games.map((item, index) => {
                   return (

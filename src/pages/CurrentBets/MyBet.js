@@ -130,11 +130,11 @@ const MyBet = () => {
                                             <Exchange title={key} data={sportsData} />
                                         )}
                                     </Tab> */}
-                                    <Tab eventKey="BookMaker" title="BookMaker">
+                                    {/* <Tab eventKey="BookMaker" title="BookMaker">
                                         {key === "BookMaker" && (
                                             <Exchange title={key} data={bookmakerData} />
                                         )}
-                                    </Tab>
+                                    </Tab> */}
                                 </Tabs>
                             </div>
                         </div>

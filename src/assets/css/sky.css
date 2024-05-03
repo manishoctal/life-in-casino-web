@@ -2223,11 +2223,11 @@ input.disable,
 
 header .login-index,
 header .btn-signup {
-    width: 28.8vw;
-    height: 8.53333vw;
+    width: 24.8vw;
+    height: 7.53333vw;
     border: .26667vw solid #710b0b;
     box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5);
-    line-height: 8.53333vw;
+    line-height: 6.53333vw;
     padding: 0;
     color: #fff;
     border-radius: 1.06667vw;
@@ -3438,7 +3438,7 @@ h4.game-info .game-live:after {
 }
 
 .login-head .close {
-    position: fixed;
+    position: absolute;
     right: 1.86667vw;
     justify-content: center;
     align-items: center;
@@ -3704,8 +3704,8 @@ header {
     position: -webkit-sticky;
     top: 0;
     width: 100vw;
-    height: 14.66667vw;
-    padding: 2.66667vw 1.86667vw 2.66667vw 0;
+    height: 3rem;
+    padding:1vw 1.86667vw 1vw 0;
     background-color: #d2d2d2;
     background-image: linear-gradient(180deg, #e6e6e6 0%, #b4b4b4 100%);
     z-index: 12
@@ -4723,7 +4723,7 @@ header .btn-signup {
     position: sticky;
     position: -webkit-sticky;
     width: 100%;
-    top: 14.66667vw;
+    top:10.5vw;
     z-index: 10;
     color: var(--themeBlack);
     line-height: 6.66667vw;
@@ -4736,10 +4736,11 @@ header .btn-signup {
 
 .marquee-box h4 {
     position: relative;
-    flex-basis: 19.2vw;
+    flex-basis: 12vw;
     justify-content: center;
     align-items: center;
     border-right: 1px solid #ddd;
+    margin: 5px 0;
 }
 
 .marquee-box h4:before {
@@ -4889,12 +4890,19 @@ nav ul {
     padding-top:3.13333vw;
     margin-top:-4.5vw
 } */
-nav .main-nav .icon-sports {
+/* nav .main-nav .icon-sports {
     width: 8.53333vw;
     height: 6.93333vw;
     margin: -2.13333vw auto 1.06667vw
+} */
+.innerSlider 
+ a img {
+    max-height: 3.5714285714285716rem!important;
 }
-
+.innerSlider{padding:1.4444vw 0!important;}
+header .logoInner img {
+    height: 7.06667vw!important;
+}
 nav .main-nav .icon-home {
     width: 6.53333vw;
     height: 6vw;
@@ -14402,6 +14410,8 @@ footer .login {
     background-size: cover
 }
 
+.innerSearch:after{ background: url('data:image/svg+xml,<svg height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="m29.6697865 25.8286042h-1.0026615l-.3764635-.3143021c1.191151-1.4455833 1.9434479-3.2687188 1.9434479-5.342849-.0000573-4.5258698-3.6359011-8.1714531-8.14825-8.1714531-4.4505886 0-8.0858594 3.6455833-8.0858594 8.1714531s3.6352708 8.1713959 8.1483073 8.1713959c2.0058385 0 3.886151-.7543594 5.3276094-1.948375l.3758906.3143593v1.0055261l6.2678802 6.2856406 1.8803125-1.8856979zm-7.5214792 0c-3.1339688 0-5.6411094-2.5143594-5.6411094-5.6571511 0-3.1429062 2.5071406-5.6570937 5.6411094-5.6570937 3.1338542 0 5.6410521 2.5141875 5.6410521 5.6570937 0 3.1427917-2.5071979 5.6571511-5.6410521 5.6571511z" fill="rgb(0,0,0)" transform="translate(-14 -12)"/></svg>') center no-repeat; background-size:5vw;}
+
 .a-search+.wrap-highlight ul {
     padding-right: 21.33333vw
 }
@@ -16591,7 +16601,7 @@ footer .login {
 
 .mian-wrap .gamehall {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.6vw;
     width: calc(100% - 3.2vw);
     padding: 1.6vw
@@ -16607,9 +16617,11 @@ footer .login {
 .mian-wrap .gamehall a img {
     position: relative;
     z-index: 2;
-    display: block;
+    /* display: block; */
     width: 100%;
-    cursor: pointer
+    cursor: pointer;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .mian-wrap .gamehall a:before {
@@ -17490,7 +17502,7 @@ header {
 }
 
 header .top-logo {
-    background-image: url(../images/logo.png)
+    background-image: url(../images/logo.svg)
 }
 
 header a {
@@ -17652,8 +17664,8 @@ header .message-wrap .close {
 }
 
 header .top-logo {
-    height: 11.46667vw;
-    margin: -1.06667vw 0 0 1.86667vw
+    height: 8vw;
+    margin: 0 0 0 1.86667vw
 }
 
 @media (orientation: landscape) {
@@ -17673,7 +17685,7 @@ header .top-logo {
 .login-head h1,
 .login-pop .login-head h1 {
     top: 52%;
-    height: 29.33333vw
+    height: 25.33333vw
 }
 
 @media (orientation: landscape) {
@@ -18490,7 +18502,7 @@ ul.input-list {
 
 
 .login-head::before {
-    background: #000000ab;
+    background: #ffffffab;
     content: "'";
     position: absolute;
     left: 0;
@@ -19104,8 +19116,9 @@ button.close-button {
 .signUpBtn {
     padding: 0;
     margin-left: 1vh;
-    height: 8.86667vw;
-    padding: 0 1.3333vh;
+    width: 24.8vw;
+    height: 7.53333vw;
+    padding: 0;
     color:#fff;
     text-transform:capitalize;
     background:linear-gradient(-180deg, var(--themeBlack) 0%, var(--themedark) 100%);
@@ -19125,4 +19138,132 @@ button.close-button {
 .login_main {
     position: relative;
     z-index: 1;
+}
+
+
+
+
+
+
+/* new changes */
+
+
+.homeSlider 
+ .slick-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 9;
+}
+
+.homeSlider {line-height:0;}
+
+.homeSlider 
+ .slick-next{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 9;
+ }
+
+ .GameSlider {
+    background-color: #1b1f23;
+    padding: 1.4444vw 1.4444vw 3.2121vh 1.4444vw;
+    color: #fff;
+}
+
+.GameSlider a {color: #ffffff73;font-size: .8571428571428571rem;text-align: center;padding: 1.4vw 2vw;border-radius: 3vw;display: block;transition: all ease-in-out .3s;-webkit-transition: all ease-in-out .3s;}
+
+.GameSlider a span img {
+    max-width: 100%;
+    max-height: 9vw;
+    margin: auto;
+}
+
+.GameSlider a dt {
+    display: block;
+    margin-bottom: 1.2354vw;
+}
+
+.GameSlider a:hover,.GameSlider a.active {
+    background-color: #44484c;
+    color:#ffdd74;
+}
+
+.GameSlider a:hover img:not(.innerSlider a img),.GameSlider a.active img:not(.innerSlider a img){
+filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-rotate(308deg) brightness(110%) contrast(111%);
+}
+
+.GameSlider 
+ .slick-dots {
+    position: absolute;
+    bottom: 0.9vh;
+}
+
+.GameSlider .slick-dots button {
+    padding: 0;
+    width: 0.8vh;
+    height: 0.8vh;
+    background: #8d8f91;
+    opacity: 1;
+    border-radius: 100vw;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.GameSlider .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0.5vw;
+}
+
+.GameSlider .slick-dots button:before {
+    display: none;
+}
+ 
+
+.GameSlider .slick-dots .slick-active button {
+    width: 2vh;
+    background-color: #ffdd74 !important;;
+}
+
+ 
+.homepageList .entrance-half:after {
+    display: none!important;
+}
+ 
+.homepageList .entrance-half {
+    border-radius: 5vw!important;
+    overflow: hidden;
+    width: 9rem;
+    height: 9rem;
+}
+ 
+.mian-wrap .gamehall .entrance-half img {
+    border-radius: 0;
+}
+
+.innerSlider { background: url('../images/nav_bg.png');     background-size: contain;}
+.innerSlider a{color:#946f3b; font-weight:bold; text-transform:capitalize;}
+
+.innerSlider a:hover,.innerSlider a.active{background-color: transparent;}
+ 
+ 
+.innerSlider a.active .withoutHover{display:none;}
+.innerSlider a .onhover{display:none;}
+.innerSlider a.active .onhover{display:block;}
+.innerSlider a.active {color:#ccb386;}
+ 
+.innerPageList .entrance-half {
+    border-radius: 0 5vw !important;
+    overflow: hidden;
+    width: 9rem;
+    height: 9rem;
+}
+
+.innerSearch {position: relative;background: #000;display: block;margin-left: auto;margin-right: 0;background: transparent;}
+
+.innerSearch:before {
+    display: none;
+
 }
