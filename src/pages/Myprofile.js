@@ -120,10 +120,10 @@ const Myprofile = () => {
 
                                                                     <tr>
                                                                         <td className="text-start" width="25%">
-                                                                            Birthday
+                                                                            Username
                                                                         </td>
                                                                         <td className="text-start" colSpan="3">
-                                                                            --
+                                                                        {profileData?.username}
                                                                         </td>
                                                                     </tr>
 
@@ -154,12 +154,20 @@ const Myprofile = () => {
                                                                                 )}
                                                                         </td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <td className="text-start" width="25%">
+                                                                            Timezone
+                                                                        </td>
+                                                                        <td className="text-start">
+                                                                            {profileData?.timeZone}
+                                                                        </td>
+                                                                    </tr>
                                                                 </tbody>
                                                             </Table>
                                                         </div>
                                                     </div>
 
-                                                    <div className="my_account_table_wrap">
+                                                    {/* <div className="my_account_table_wrap">
                                                         <h5>Address</h5>
 
                                                         <div className="table-main-wrapper">
@@ -216,7 +224,7 @@ const Myprofile = () => {
                                                                 </tbody>
                                                             </Table>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </Col>
 
                                                 <Col lg={6} md={12}>
@@ -239,6 +247,24 @@ const Myprofile = () => {
                                                         </div>
                                                     </div>
                                                     <div className="my_account_table_wrap">
+                                                        <h5>My Referral</h5>
+
+                                                        <div className="table-main-wrapper">
+                                                            <Table className="table_caption_style profile_table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="text-start" width="25%">
+                                                                            Code
+                                                                        </td>
+                                                                        <td className="text-start" colSpan="3">
+                                                                            {profileData?.referralCode || "N/A"}
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </Table>
+                                                        </div>
+                                                    </div>
+                                                    {/* <div className="my_account_table_wrap">
                                                         <h5>Setting</h5>
 
                                                         <div className="table-main-wrapper">
@@ -249,7 +275,7 @@ const Myprofile = () => {
                                                                             Currency
                                                                         </td>
                                                                         <td className="text-start" colSpan="3">
-                                                                            {/* {profileData?.currency}PBU */}{process.env.REACT_APP_SHOW_CURRENCY == 'true' ? process.env.REACT_APP_CURRENCY : '--'}
+                                                                            {process.env.REACT_APP_SHOW_CURRENCY == 'true' ? process.env.REACT_APP_CURRENCY : '--'}
                                                                         </td>
                                                                     </tr>
 
@@ -264,8 +290,8 @@ const Myprofile = () => {
                                                                 </tbody>
                                                             </Table>
                                                         </div>
-                                                    </div>
-                                                    <div className="my_account_table_wrap">
+                                                    </div> */}
+                                                    {/* <div className="my_account_table_wrap">
                                                         <h5>Commission </h5>
 
                                                         <div className="table-main-wrapper">
@@ -282,7 +308,7 @@ const Myprofile = () => {
                                                                 </tbody>
                                                             </Table>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </Col>
                                             </Row>
                                         </div>
