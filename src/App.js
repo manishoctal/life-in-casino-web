@@ -53,11 +53,11 @@ function App() {
   let { user } = useContext(AuthProvider);
   const [redirected, setRedirected] = useState(false);
 
-  // useEffect(() => {
-  //   if (isEmpty(user)) {
-  //     navigate("/");
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (isEmpty(user)) {
+      navigate("/");
+    }
+  }, [user]);
 
   useEffect(() => {
     const handleResize = () => {
