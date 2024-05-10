@@ -19265,5 +19265,8 @@ filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-
 
 .innerSearch:before {
     display: none;
+ }
 
-}
+
+
+

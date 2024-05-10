@@ -114,7 +114,7 @@ const Footer = () => {
           </li> */}
 
           <li id="support">
-            <Link to={"http://Wa.me/+911111111111"} target="_blank" neua="Multi Markets" className="ui-link">
+            <Link to={"http://Wa.me/+917899413279"} target="_blank" neua="Multi Markets" className="ui-link">
               <img
                 className="icon-pin"
                 src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
