@@ -207,8 +207,8 @@ function Login(props) {
           </li>
         </ul>
 
-        <div className="support-wrap extend-support">
-          {/* <div className="extend-btn">
+        {/* <div className="support-wrap extend-support"> */}
+        {/* <div className="extend-btn">
             <img
               src={
                 process.env.REACT_APP_URL +
@@ -231,7 +231,7 @@ function Login(props) {
               support2
             </a>
           </div> */}
-          { 
+        {/* { 
             data?.whatsappShowing != "false" ?
           <div className="extend-btn">
             <img
@@ -251,17 +251,17 @@ function Login(props) {
               className={data?.whatsappShowing == 'true' && "split-line"}
             >
               WhatsApp 2
-            </a>}
-            {/* <a
+            </a>} */}
+        {/* <a
               href="http://Wa.me/+15705055756"
               target="_blank"
               className="split-line"
             >
               +1 570 5055756
             </a> */}
-          </div>
-          : ""}
-          {data?.telegramShowing != "false" || data?.telegramShowing2  != "false" ?
+        {/* </div> */}
+        {/* : ""} */}
+        {/* {data?.telegramShowing != "false" || data?.telegramShowing2  != "false" ?
           <div className="extend-btn">
             <img
               src={
@@ -276,10 +276,10 @@ function Login(props) {
               {data?.telegramContent2}
             </a>}
           </div>
-          : ""}
+          : ""} */}
 
-          <div className="support-social">
-            {/* <div className="social-btn">
+        {/* <div className="support-social"> */}
+        {/* <div className="social-btn">
               <img
                 src={
                   process.env.REACT_APP_URL +
@@ -293,7 +293,7 @@ function Login(props) {
               </a>
             </div> */}
 
-            {data?.facebookShowing == 'true' && data?.facebookContent != '' && <div className="social-btn">
+        {/* {data?.facebookShowing == 'true' && data?.facebookContent != '' && <div className="social-btn">
               <img
                 src={
                   process.env.REACT_APP_URL +
@@ -301,16 +301,16 @@ function Login(props) {
                 }
                 title="Email"
                 className="support-mail"
-              />
-              {/* <a href={`mailto:${data?.emailContent}`} target="_blank">
+              /> */}
+        {/* <a href={`mailto:${data?.emailContent}`} target="_blank">
                 Email
               </a> */}
-              <a href={data?.facebookContent} target="_blank">
+        {/* <a href={data?.facebookContent} target="_blank">
                 Facebook
               </a>
-            </div>}
+            </div>} */}
 
-            {data?.instagramShowing == 'true' && data?.instagramContent != '' && <div className="social-btn">
+        {/* {data?.instagramShowing == 'true' && data?.instagramContent != '' && <div className="social-btn">
               <img
                 src={
                   process.env.REACT_APP_URL +
@@ -322,9 +322,27 @@ function Login(props) {
               <a href={data?.instagramContent} target="_blank" className="ui-link">
                 Instagram
               </a>
-            </div>}
-          </div>
-        </div>
+            </div>} */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* <div className="support-wrap extend-supportLink">
+          {data?.emailShowing == "true" && data?.emailContent != "" && (
+            <a href={`mailto:${data?.emailContent}`}><img src="assets/images/home/mail.svg" /></a>
+          )}
+          <a href="#"><img src="assets/images/home/twitter.svg" /></a>
+          {data?.whatsappShowing == "true" && data?.whatsappContent != "" && (
+            <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank">
+              <img src="assets/images/home/whatsappNew.svg" />
+            </a>
+          )}
+          <a href="#"><img src="assets/images/home/skypeNew.svg" /></a>
+          {data?.instagramShowing == "true" && data?.instagramContent != "" && (
+            <a href={data?.instagramContent} target="_blank"><img src="assets/images/home/instagram.svg" /></a>
+          )}
+          {data?.facebookShowing == "true" && data?.facebookContent != "" && (
+            <a href={data?.facebookContent} target="_blank"><img src="assets/images/home/facebook.svg" /></a>
+          )}
+        </div> */}
       </div>
     </div>
   );
