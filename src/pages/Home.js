@@ -122,21 +122,19 @@ function Home() {
 
 <Slider {...settings} className="homeSlider">
       <div >
-        <img src="/assets/images/home/slider1.webp" style={{ width: "100%" }} alt="" />
+        <img src="/assets/images/home/homeBanner1.jpg" style={{ width: "100%" }} alt="" />
       </div>
  
       <div >
-        <img src="/assets/images/home/slider2.webp" style={{ width: "100%" }} alt="" />
+        <img src="/assets/images/home/homeBanner2.jpg" style={{ width: "100%" }} alt="" />
       </div>
 
       <div >
-        <img src="/assets/images/home/slider3.webp" style={{ width: "100%" }} alt="" />
+        <img src="/assets/images/home/homeBanner1.jpg" style={{ width: "100%" }} alt="" />
       </div>
       
     </Slider>
-
  
-
 
       <div id="headerMain2" className="marquee-box" style={{ display: "flex" }}>
         <h4></h4>
@@ -165,7 +163,7 @@ function Home() {
         <div className="mian-wrap">
           <CasinoGamesHome/>
 
-          <div className="support-wrap extend-support">
+          {/* <div className="support-wrap extend-support">
             {data?.whatsappShowing != "false" ? (
               <div className="extend-btn">
                 <img src="assets/images/transparent.gif" title="WhatsApp" className="support-whatsapp" />
@@ -207,7 +205,7 @@ function Home() {
                   <img src={process.env.REACT_APP_URL + "/assets/images/home/icons8-facebook-48.png"} title="Email" className="support-mail" />
                   {/* <a href={`mailto:${data?.emailContent}`} target="_blank">
                 Email
-              </a> */}
+              </a> 
                   <a href="https://m.facebook.com/groups/299170486016271/?ref=share&mibextid=NSMWBT" target="_blank">
                     Facebook
                   </a>
@@ -223,6 +221,16 @@ function Home() {
                 </div>
               )}
             </div>
+          </div> */}
+
+
+          <div className="support-wrap extend-supportLink">
+                <a href="#"><img src="assets/images/home/mail.svg" /></a>
+                <a href="#"><img src="assets/images/home/twitter.svg" /></a>
+                <a href="#"><img src="assets/images/home/whatsappNew.svg" /></a>
+                <a href="#"><img src="assets/images/home/skypeNew.svg" /></a>
+                <a href="#"><img src="assets/images/home/instagram.svg" /></a>
+                <a href="#"><img src="assets/images/home/facebook.svg" /></a> 
           </div>
 
           <div>

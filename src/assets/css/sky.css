@@ -18137,10 +18137,10 @@ nav .game-nav a {
 }
 
 nav ul a {
-    width: 15vw; 
+    width: 16.5555vw; 
 }
 
-nav ul li{ margin: 0 1vh;}
+nav ul li{ margin: 0 1.55vw;}
 
 
 
@@ -19276,3 +19276,20 @@ filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-
 
 
 
+
+
+ .extend-supportLink {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2vw;
+}
+
+.extend-supportLink a {
+    margin: 0 2.3vw;
+}
+
+.extend-supportLink a img {
+    width: 9vw;
+}
+ 
