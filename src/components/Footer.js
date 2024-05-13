@@ -21,7 +21,7 @@ const Footer = () => {
                     className="icon-promote"
                     src={process.env.REACT_APP_URL + "/assets/images/icon-title.webp"}
                     alt=""
-
+y
                   />
                 </picture>
                 <span className="header__number" data-v-302cf84b="">

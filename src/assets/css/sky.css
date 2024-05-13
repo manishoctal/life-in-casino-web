@@ -2223,15 +2223,15 @@ input.disable,
 
 header .login-index,
 header .btn-signup {
-    width: 24.8vw;
-    height: 7.53333vw;
-    border: .26667vw solid #710b0b;
-    box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5);
-    line-height: 6.53333vw;
+    width: 20.8vw;
+    height: 7vw;
+    /* border: .26667vw solid #710b0b; */
+    /* box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5); */
+    line-height:5.33333vw;
     padding: 0;
     color: #fff;
     border-radius: 1.06667vw;
-    margin-top: .26667vw
+    /* margin-top: .26667vw */
 }
 
 @media screen and (min-aspect-ratio: 16 / 9) {
@@ -3705,7 +3705,7 @@ header {
     top: 0;
     width: 100vw;
     height: 3rem;
-    padding:1vw 1.86667vw 1vw 0;
+    padding:1.66vw 1.86667vw 1vw 0;
     background-color: #d2d2d2;
     background-image: linear-gradient(180deg, #e6e6e6 0%, #b4b4b4 100%);
     z-index: 12
@@ -3963,8 +3963,8 @@ header a {
     height: 5.86667vw;
     line-height: 5.33333vw;
     font-weight: bold;
-    border: .26667vw solid rgba(0, 0, 0, 0.25);
-    box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.3);
+    /* border: .26667vw solid rgba(0, 0, 0, 0.25); */
+    /* box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.3); */
     border-radius: 1.06667vw;
     padding: 1.6vw 1.86667vw
 }
@@ -4025,10 +4025,11 @@ header .top-logo {
 }
 
 header .login-index {
-    background-image: linear-gradient(-180deg, var(--themeBlack) 0%, var(--themedark) 100%);
+    background: #e20000;
+    font-weight:bold!important;
 }
 
-header .login-index:before {
+/* header .login-index:before {
     content: "";
     width: 4.53333vw;
     height: 4.53333vw;
@@ -4036,7 +4037,7 @@ header .login-index:before {
     background-size: contain;
     margin-right: 1.33333vw;
     vertical-align: top
-}
+} */
 
 header .btn-signup {
     display: none;
@@ -4936,12 +4937,13 @@ nav img {
     margin-bottom: 6px;
 }
 nav a {
-    width: 20vw;
+    width: 15vw;
     height: 13.33333vw;
     color: #000;
-    font-size: 3.2vw;
+    font-size: 3vw;
+    font-weight:normal;
     line-height: 1.1;
-    padding: 1.86667vw 2.66667vw 0
+    padding: 1.86667vw 1.66667vw 0
 }
 
 nav img {
@@ -18135,8 +18137,10 @@ nav .game-nav a {
 }
 
 nav ul a {
-    width: 19.8vw;
+    width: 15vw; 
 }
+
+nav ul li{ margin: 0 1vh;}
 
 
 
@@ -19115,17 +19119,19 @@ button.close-button {
 }
 .signUpBtn {
     padding: 0;
-    margin-left: 1vh;
-    width: 24.8vw;
-    height: 7.53333vw;
+    margin-right: 1vh;
+    width: 20.8vw;
+    height: 7vw;
     padding: 0;
     color:#fff;
+    font-weight:bold;
     text-transform:capitalize;
-    background:linear-gradient(-180deg, var(--themeBlack) 0%, var(--themedark) 100%);
-    box-shadow:inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5);
+    /* background:linear-gradient(-180deg, var(--themeBlack) 0%, var(--themedark) 100%); */
+    background:#806618;
+    /* box-shadow:inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5); */
 }
 
-.signUpBtn:before {
+/* .signUpBtn:before {
     content: "";
     width: 5.53333vw;
     height: 4.53333vw;
@@ -19133,7 +19139,7 @@ button.close-button {
     background-size: contain;
     margin-right: 1.33333vw;
     vertical-align: top;
-}
+} */
 
 .login_main {
     position: relative;
