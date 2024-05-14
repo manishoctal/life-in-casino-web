@@ -178,8 +178,9 @@ function CasinoGames() {
                     // }
                   }}
                 >
+                   <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span>
                   <dt>{item?.name}</dt>
-                  <span><img src="/assets/images/home/casinoGirl.png" alt=""/></span>
+                 
                 </a>
                 </div>
           

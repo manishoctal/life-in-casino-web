@@ -4898,7 +4898,7 @@ nav ul {
 } */
 .innerSlider 
  a img {
-    max-height: 3.5714285714285716rem!important;
+    /* max-height: 3.5714285714285716rem!important; */
 }
 .innerSlider{padding:1.4444vw 0!important;}
 header .logoInner img {
@@ -19182,7 +19182,7 @@ button.close-button {
 
 .GameSlider a span img {
     max-width: 100%;
-    max-height: 9vw;
+    /* max-height: 9vw; */
     margin: auto;
 }
 
@@ -19293,3 +19293,6 @@ filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-
     width: 9vw;
 }
  
+ .login_main {
+    height: 100vh;
+}

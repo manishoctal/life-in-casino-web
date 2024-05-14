@@ -162,8 +162,8 @@ function CasinoGames() {
                 >
                   <dt>{item?.name}</dt>
                   <span>
-                  <img className="withoutHover"src="/assets/images/home/Gamelive.svg" alt=""/>
-                  <img className="onhover" src="/assets/images/home/hover-live.svg" alt=""/>
+                  <img className="withoutHover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gray.png`} alt=""/>
+                  <img className="onhover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gold.png`} alt=""/>
                   </span>
                 </a>
               );

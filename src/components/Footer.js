@@ -69,35 +69,45 @@ y
 
           <li id="home" className={window.location.pathname == '/' ? "select main-nav" : ""}>
             <Link to="/" neua="Home" className="ui-link">
-              <img
+              {window.location.pathname == '/' ? <img
                 className="icon-home"
-                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_active.png"}
                 alt=""
-              />
+              /> : <img
+                className="icon-home"
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_gray.png"}
+                alt=""
+              />}
               Home
             </Link>
           </li>
 
           <li id="casino" className={window.location.pathname == '/casino-games' ? "select main-nav" : ""}>
             <Link to="/casino-games" neua="Sports" className="ui-link">
-              <img
+              {window.location.pathname == '/casino-games' ? <img
                 className=""
-                src={process.env.REACT_APP_URL + "/assets/images/home/casinoFooter.webp"}
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_active.png"}
                 alt=""
-              // src={process.env.REACT_APP_URL + '/yourPathHere.jpg' }
-              />
+              /> : <img
+                className=""
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_gray.png"}
+                alt=""
+              />}
               Casino
             </Link>
           </li>
 
           <li id="sports" className={window.location.pathname == '/sports' ? "select main-nav" : ""}>
             <Link to="/sports" neua="Sports" className="ui-link">
-              <img
+              {window.location.pathname == '/sports' ? <img
                 className="icon-sports"
-                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_active.png"}
                 alt=""
-              // src={process.env.REACT_APP_URL + '/yourPathHere.jpg' }
-              />
+              /> : <img
+                className="icon-home"
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_gray.png"}
+                alt=""
+              />}
               Sports
             </Link>
           </li>
@@ -117,7 +127,7 @@ y
             <Link to={"http://Wa.me/+917899413279"} target="_blank" neua="Multi Markets" className="ui-link">
               <img
                 className="icon-pin"
-                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/whatsup_gray.png"}
                 alt=""
               />
               Support
@@ -125,11 +135,31 @@ y
           </li>
           <li id="account" className={window.location.pathname == '/profile' ? "select main-nav" : ""}>
             <Link to={user ? "/profile" : "/login"}>
-              <img
-                className="icon-account"
-                src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"}
-                alt=""
-              />
+              {isEmpty(user) ?
+                <>
+                  {window.location.pathname == '/login' ? <img
+                    className="icon-account"
+                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_active.png"}
+                    alt=""
+                  /> : <img
+                    className="icon-account"
+                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_gray.png"}
+                    alt=""
+                  />
+                  }
+                </> : <>
+                  {window.location.pathname == '/profile' ? <img
+                    className="icon-account"
+                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_active.png"}
+                    alt=""
+                  /> : <img
+                    className="icon-account"
+                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_gray.png"}
+                    alt=""
+                  />
+                  }
+                </>
+              }
               {!isEmpty(user) ? "Account" : "Login"}
             </Link>
           </li>
