@@ -3764,8 +3764,11 @@ header li.main-wallet .a-wallet ul {
     border-radius: 1.06667vw 0 0 0; background-color: #000;
 }
 .select.main-nav {
-    background: var(--theme2);
-    border-radius: 10px;
+    /* background: var(--theme2);
+    border-radius: 10px; */
+}
+.select.main-nav .ui-link {
+    color: #fdcb2a;
 }
 
 header li.main-wallet .a-wallet li:last-child {
@@ -4843,9 +4846,10 @@ nav {
     width: 100%;
     /* background-image: url('../images/footer_shape.svg'); */
     /* background-image:linear-gradient(-180deg, #243a48 20%, #172732 91%); */
+    background:linear-gradient(172deg, black, #353535);
     color: #fff;
     z-index: 10;
-    background-size: 60vw;
+    background-size: 100vw;
     background-repeat: no-repeat;
     background-position: bottom center;
     background-color: #fff;
@@ -4933,17 +4937,17 @@ nav:before {
     border-radius: 0 3.4vw 0 0;
 }
 nav img {
-    filter: brightness(0);
+    /* filter: brightness(0); */
     margin-bottom: 6px;
 }
 nav a {
     width: 15vw;
     height: 13.33333vw;
-    color: #000;
-    font-size: 3vw;
-    font-weight:normal;
-    line-height: 1.1;
-    padding: 1.86667vw 1.66667vw 0
+    color: #626262;
+    font-size: 3.5vw;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 1.86667vw 1.66667vw 0;
 }
 
 nav img {
@@ -19239,7 +19243,7 @@ filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-
 }
  
 .homepageList .entrance-half {
-    border-radius: 5vw!important;
+    border-radius: 0 5vw 0 5vw!important;
     overflow: hidden;
     width: 9rem;
     height: 9rem;

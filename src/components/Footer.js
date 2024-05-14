@@ -70,11 +70,11 @@ y
           <li id="home" className={window.location.pathname == '/' ? "select main-nav" : ""}>
             <Link to="/" neua="Home" className="ui-link">
               {window.location.pathname == '/' ? <img
-                className="icon-home"
+                className="icon-home2"
                 src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_active.png"}
                 alt=""
               /> : <img
-                className="icon-home"
+                className="icon-home2"
                 src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_gray.png"}
                 alt=""
               />}
@@ -100,11 +100,11 @@ y
           <li id="sports" className={window.location.pathname == '/sports' ? "select main-nav" : ""}>
             <Link to="/sports" neua="Sports" className="ui-link">
               {window.location.pathname == '/sports' ? <img
-                className="icon-sports"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_active.png"}
+                className="icon-sports2"
+                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sport_active.png"}
                 alt=""
               /> : <img
-                className="icon-home"
+                className="icon-home2"
                 src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_gray.png"}
                 alt=""
               />}
@@ -126,7 +126,7 @@ y
           <li id="support">
             <Link to={"http://Wa.me/+917899413279"} target="_blank" neua="Multi Markets" className="ui-link">
               <img
-                className="icon-pin"
+                className="icon-pin2"
                 src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/whatsup_gray.png"}
                 alt=""
               />
@@ -138,22 +138,22 @@ y
               {isEmpty(user) ?
                 <>
                   {window.location.pathname == '/login' ? <img
-                    className="icon-account"
+                    className="icon-account2"
                     src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_active.png"}
                     alt=""
                   /> : <img
-                    className="icon-account"
+                    className="icon-account2"
                     src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_gray.png"}
                     alt=""
                   />
                   }
                 </> : <>
                   {window.location.pathname == '/profile' ? <img
-                    className="icon-account"
+                    className="icon-account2"
                     src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_active.png"}
                     alt=""
                   /> : <img
-                    className="icon-account"
+                    className="icon-account2"
                     src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_gray.png"}
                     alt=""
                   />
