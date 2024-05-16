@@ -210,7 +210,7 @@ function CasinoGames() {
                     </a>
                   );
                 })
-              : "No games found"}
+              : ""}
           </div>
           {showLoadMore && <div style={{ display: "flex" }}>
                         <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>

@@ -20,7 +20,8 @@ function Home() {
     navigator: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true
   };
 
   const [inplayCountData, setInplayCountData] = useState({});
@@ -225,16 +226,19 @@ function Home() {
 
 
           <div className="support-wrap extend-supportLink">
-            {data?.emailShowing == "true" && data?.emailContent != "" && (
+            {/* {data?.emailShowing == "true" && data?.emailContent != "" && (
               <a href={`mailto:${data?.emailContent}`}><img src="assets/images/home/mail.svg" /></a>
+            )} */}
+            {data?.telegramShowing == "true" && data?.telegramContent != "" && (
+              <a href={`https://web.telegram.org/`+data?.telegramContent} target="_blank"><img src="assets/images/home/twitter.svg" /></a>
             )}
-            <a href="#"><img src="assets/images/home/twitter.svg" /></a>
+            {/* <a href="#"><img src="assets/images/home/twitter.svg" /></a> */}
             {data?.whatsappShowing == "true" && data?.whatsappContent != "" && (
               <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank">
                 <img src="assets/images/home/whatsappNew.svg" />
               </a>
             )}
-            <a href="#"><img src="assets/images/home/skypeNew.svg" /></a>
+            {/* <a href="#"><img src="assets/images/home/skypeNew.svg" /></a> */}
             {data?.instagramShowing == "true" && data?.instagramContent != "" && (
               <a href={data?.instagramContent} target="_blank"><img src="assets/images/home/instagram.svg" /></a>
             )}
