@@ -3753,14 +3753,14 @@ header li.main-wallet .a-wallet {
     line-height: initial;
     border: 0;
     border-radius: .8vw 0 0 .8vw;
-    box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5);
+    /* box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5); */
     padding: 0
 }
 
 header li.main-wallet .a-wallet ul {
     position: relative;
     flex-wrap: wrap;
-    height: 7vw;
+    height: 8.1vw;
     line-height: 3.2vw;
     padding: 1vw 1.66667vw 0 1.86667vw;
     border-radius: 1.06667vw 0 0 0;
@@ -3984,7 +3984,7 @@ header a.a-refresh {
     border: none;
     border-left: .26667vw solid rgba(0, 0, 0, 0.25);
     border-radius: 0 1.06667vw 1.06667vw 0;
-    box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.3)
+    /* box-shadow: inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.3) */
 }
 
 header img {
