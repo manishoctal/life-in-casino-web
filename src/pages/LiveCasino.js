@@ -219,7 +219,7 @@ function LiveCasino() {
             <li>
               <a href="#">KYC</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#">Responsible Gaming</a>
             </li>
             <li>
@@ -230,7 +230,7 @@ function LiveCasino() {
             </li>
             <li>
               <a href="#">Underage Policy</a>
-            </li>
+            </li> */}
           </ul>
 
           <div className="extra-wrap">
