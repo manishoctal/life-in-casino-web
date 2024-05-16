@@ -3445,7 +3445,7 @@ h4.game-info .game-live:after {
     align-items: center;
     width: 9.33333vw;
     height: 9.33333vw;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color:#fed140;
     border-radius: 50%;
     margin-top: 1.86667vw;
     z-index: 2
