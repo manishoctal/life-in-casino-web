@@ -18721,7 +18721,7 @@ button.close-button {
 .signup_tabs .tab-content {
     /* background: #163E90; */
     /* background: linear-gradient(177deg, #243A48, #172732); */
-    padding: 24px 0 100px 0;
+    padding: 0px 0 100px 0;
     height: 100%;
 }
 
