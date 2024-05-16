@@ -18515,7 +18515,7 @@ ul.input-list {
 
 
 .login-head::before {
-    background: #ffffffab;
+    /* background: #ffffffab; */
     content: "'";
     position: absolute;
     left: 0;
@@ -19311,3 +19311,13 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
 }
 
 .signUp{height:auto;}
+.whatsup{
+    background: #ccc !important;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.registerWhatsup{
+    width: 6.5vw;
+    vertical-align: middle;
+    margin-right: 1.5vw;
+}

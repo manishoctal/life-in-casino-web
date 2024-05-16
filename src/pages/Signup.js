@@ -399,25 +399,30 @@ function Signup(props) {
                                     <label className="agree_tag">
                                         <input type="checkbox" className="theme_checkbox" />
                                         <div> By clicking this button you confirm that you have read and agree to
-                                            the <a href="#" style={{ color:'red',cursor:'pointer'}}>Terms and Conditions</a> and <a href="#"  style={{ color:'red',cursor:'pointer'}}>Privacy Policy</a> of the
-                                        company and confirm that you are of legal age. For support please contact me on <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank" style={{ color:'black',cursor:'pointer'}}>WhatsApp.</a></div>
-                                </label>
-                            </dd>
+                                            the <a href="#" style={{ color: 'red', cursor: 'pointer' }}>Terms and Conditions</a> and <a href="#" style={{ color: 'red', cursor: 'pointer' }}>Privacy Policy</a> of the
+                                            company and confirm that you are of legal age. For support please contact me on <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank" style={{ color: 'black', cursor: 'pointer' }}>WhatsApp.</a></div>
+                                    </label>
+                                </dd>
 
-                            <dd>
-                                <Button type="submit" className="btn-send w-100" id="loginBtn">
-                                    Register
-                                </Button>
-                            </dd>
+                                <dd>
+                                    <Button type="submit" className="btn-send w-100" id="loginBtn">
+                                        Register
+                                    </Button>
+                                </dd>
+                                <dd>
+                                    <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank" style={{ color: 'black', cursor: 'pointer' }} className="btn-send whatsup w-100" id="loginBtn">
+                                        <img src="assets/images/home/whatsappNew.svg"  className="registerWhatsup"/><span>Get Instant ID</span>
+                                    </a>
+                                </dd>
 
 
-                        </dl>
+                            </dl>
 
-                    </Form>
-                </Tab>
-            </Tabs>
+                        </Form>
+                    </Tab>
+                </Tabs>
 
-        </div>
+            </div>
         </div >
     );
 }
