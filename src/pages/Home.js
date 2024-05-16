@@ -272,7 +272,7 @@ function Home() {
             <li>
               <a href="#">Responsible Gaming</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#">About Us</a>
             </li>
             <li>
@@ -280,7 +280,7 @@ function Home() {
             </li>
             <li>
               <a href="#">Underage Policy</a>
-            </li>
+            </li> */}
           </ul>
 
           <div className="extra-wrap"></div>

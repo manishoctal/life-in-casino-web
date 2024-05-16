@@ -252,14 +252,14 @@ const Header = () => {
         </header>
       )}
       {isEmpty(user) && (
-        <header style={{ display: "flex" }}>
+        <header style={{ display: "flex", alignItems:"center" }}>
           <h1 className="top-logo"></h1>
           {/* <a className="btn-signup ui-link">Sign up</a> */}
-    
-          {process.env?.REACT_APP_ENABLE_SIGNUP == 'true' && <Link to="/signup" className="bg-transparent ui-link signUpBtn">Register</Link>}
           <Link to="/login" className="login-index ui-link">
             Login
           </Link>
+          {process.env?.REACT_APP_ENABLE_SIGNUP == 'true' && <Link to="/signup" className="bg-transparent ui-link signUpBtn">Register</Link>}
+       
           <div
             id="msgBox"
             className="message-wrap success to-open_bets"

@@ -119,7 +119,7 @@ function Signup(props) {
 
 
     return (
-        <div className="login_main">
+        <div className="login_main signUp">
             <header className="login-head">
                 <Link to="/" className="close"></Link>
                 <h1>{process.env.REACT_APP_SITE_NAME}</h1>
