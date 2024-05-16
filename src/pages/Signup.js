@@ -12,6 +12,8 @@ import { toast } from "wc-toast";
 
 function Signup(props) {
     let { oneClickloginUser, isLoged, setShowModel, setOneClickData } = useContext(AuthProvider);
+    const [data, setData] = useState({});
+
     const {
         register,
         handleSubmit,
@@ -38,7 +40,7 @@ function Signup(props) {
     });
     const [password_same, set_password_same] = useState();
 
-    const [data, setData] = useState({});
+
     const [check, setCheck] = useState(false);
     const [isLoader, setLoader] = useState(false);
 
@@ -76,6 +78,17 @@ function Signup(props) {
 
     };
     const navigate = useNavigate();
+
+    const getSetting = async (event) => {
+        try {
+            const { status, data: response_users } = await apiGet(apiPath.getSetting + "?website=" + document?.location?.host);
+            if (status === 200) {
+                if (response_users.success) {
+                    setData(response_users.results);
+                }
+            }
+        } catch (err) { }
+    };
 
     const onSubmit2 = async (request) => {
 
@@ -115,6 +128,10 @@ function Signup(props) {
             }
         }
     };
+
+    useEffect(() => {
+        getSetting()
+    })
 
 
 
@@ -167,7 +184,7 @@ function Signup(props) {
                   </Form.Select>
 
                 </dd> */}
-                                <dd>
+                                {/* <dd>
                                     <Form.Group>
                                         <Form.Control
                                             type="text"
@@ -220,7 +237,7 @@ function Signup(props) {
                                             </label>
                                         )}
                                     </Form.Group>
-                                </dd>
+                                </dd> */}
                                 <dd>
                                     <Form.Group>
                                         <Form.Control
@@ -231,7 +248,7 @@ function Signup(props) {
                                                 required: "Please enter mobile",
                                                 maxLength: {
                                                     value: 15,
-                                                    message:"Max length is 15 characters.",
+                                                    message: "Max length is 15 characters.",
                                                 },
                                                 minLength: {
                                                     value: 8,
@@ -250,7 +267,7 @@ function Signup(props) {
                                         )}
                                     </Form.Group>
                                 </dd>
-                                <dd>
+                                {/* <dd>
                                     <Form.Group>
                                         <Form.Control
                                             type="email"
@@ -270,7 +287,7 @@ function Signup(props) {
                                             </label>
                                         )}
                                     </Form.Group>
-                                </dd>
+                                </dd> */}
 
                                 <dd>
                                     <Form.Group>
@@ -374,34 +391,34 @@ function Signup(props) {
 
 
 
-                                <dd className="my-15">
+                                {/* <dd className="my-15">
                                     This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
-                                </dd>
-
-                                {/* <dd>
-                  <label className="agree_tag">
-                    <input type="checkbox" className="theme_checkbox" />
-                    <div> By clicking this button you confirm that you have read and agree to
-                      the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> of the
-                      company and confirm that you are of legal age</div>
-                  </label>
-                </dd> */}
+                                </dd> */}
 
                                 <dd>
-                                    <Button type="submit" className="btn-send w-100" id="loginBtn">
-                                        Register
-                                    </Button>
-                                </dd>
+                                    <label className="agree_tag">
+                                        <input type="checkbox" className="theme_checkbox" />
+                                        <div> By clicking this button you confirm that you have read and agree to
+                                            the <a href="#" style={{ color:'red',cursor:'pointer'}}>Terms and Conditions</a> and <a href="#"  style={{ color:'red',cursor:'pointer'}}>Privacy Policy</a> of the
+                                        company and confirm that you are of legal age. For support please contact me on <a href={"http://Wa.me/+" + data?.whatsappContent} target="_blank" style={{ color:'black',cursor:'pointer'}}>WhatsApp.</a></div>
+                                </label>
+                            </dd>
+
+                            <dd>
+                                <Button type="submit" className="btn-send w-100" id="loginBtn">
+                                    Register
+                                </Button>
+                            </dd>
 
 
-                            </dl>
+                        </dl>
 
-                        </Form>
-                    </Tab>
-                </Tabs>
+                    </Form>
+                </Tab>
+            </Tabs>
 
-            </div>
         </div>
+        </div >
     );
 }
 

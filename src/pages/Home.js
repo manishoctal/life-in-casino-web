@@ -16,12 +16,13 @@ import Slider from "react-slick";
 function Home() {
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     navigator: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true
+    autoplay: true,
+    loop: true
   };
 
   const [inplayCountData, setInplayCountData] = useState({});

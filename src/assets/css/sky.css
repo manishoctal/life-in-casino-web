@@ -4849,14 +4849,14 @@ nav {
     width: 100%;
     /* background-image: url('../images/footer_shape.svg'); */
     /* background-image:linear-gradient(-180deg, #243a48 20%, #172732 91%); */
-    background:linear-gradient(172deg, black, #353535);
+    /* background:linear-gradient(172deg, black, #353535); */
     color: #fff;
     z-index: 10;
     background-size: 100vw;
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-color: #fff;
-    border-top:1px solid #ddd;
+    background-color: #000;
+    /* border-top:1px solid #ddd; */
     padding: 10px 0;
 }
 
@@ -19067,7 +19067,7 @@ button.close-button {
 .form-login *:not(.form-login a){ color:var(--themeBlack);}
 .form-login .invalid-feedback{color:#fff!important;}
 
-.form-login a{text-decoration:underline;}
+/* .form-login a{text-decoration:underline;} */
 
 .static-content {
     padding: 10px;
