@@ -100,7 +100,18 @@ function Profile() {
               >
                 My Withdraw Requests
               </Link>
-            </li></>
+            </li>
+            
+            <li className="">
+              <Link
+                to={"/deposit-requests"}
+                state={{ from: 'deposit' }}
+              >
+                My Deposit Requests
+              </Link>
+            </li>
+            
+            </>
           }
 
           {/* <li className="">

@@ -8,7 +8,7 @@ import apiPath from "../Utils/apiPath";
 import obj from "../Utils/helpers";
 import { toast } from "wc-toast";
 import CasinoGamesHome from "./CasinoGamesHome";
-
+import TopCasinoGames from './TopCasinoGames'
 import Slider from "react-slick";
 
 
@@ -163,6 +163,7 @@ function Home() {
       </div>
       <div id="page">
         <div className="mian-wrap">
+          <TopCasinoGames/>
           <CasinoGamesHome />
 
           {/* <div className="support-wrap extend-support">

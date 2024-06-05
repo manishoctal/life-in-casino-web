@@ -19202,7 +19202,9 @@ button.close-button {
 
 .GameSlider a:hover,.GameSlider a.active {
     background-color: #44484c;
-    color:#ffdd74;
+    color: #ffdd74;
+    border: 1px solid #ffdd74;
+ 
 }
 
 .GameSlider a:hover img:not(.innerSlider a img),.GameSlider a.active img:not(.innerSlider a img){
@@ -19320,4 +19322,62 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
     width: 6.5vw;
     vertical-align: middle;
     margin-right: 1.5vw;
+}
+  
+
+/* new css */
+.TopGameWrap{padding:3vw; text-align:center;}
+.ProviderGame{ text-align:center;     background-color: #1b1f23; padding:1vh 0; margin:1vh 0 0 0;}
+.topGameImage .entrance img {
+    max-width: calc(100% - 2vw);
+    min-height: 140px;
+    margin-bottom: 1vh;
+}
+ 
+.sectionHead{
+    font-size:4.88vw;
+    margin:6px 0;
+    font-style:italic; 
+}
+
+.TopGameWrap .slick-dots{
+    position: static;
+    margin-top: 10px;
+}
+ 
+
+.BtnRow {
+    display: flex;
+    align-items: center;
+}
+
+.BtnRow .btn-box {
+    flex: 1;
+    max-width: 100%;
+}
+
+.BtnRow .btn-box button {
+    width: 100%;
+}
+
+
+
+
+/* slider css */
+
+
+.sliderProvider{
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(246 211 101 / var(--tw-border-opacity));
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #f6d365 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(246 211 101 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: rgb(253 160 133 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), #fda085 var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-to: #f6d365 var(--tw-gradient-to-position);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

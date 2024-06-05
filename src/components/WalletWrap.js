@@ -5,8 +5,10 @@ import { useContext } from "react";
 import AuthProvider from "../context/AuthContext";
 import { apiPost } from "../Utils/apiFetch";
 import apiPath from "../Utils/apiPath";
+import { useNavigate } from "react-router-dom";
 const WalletWrap = ({ user_coins, casionData, recallCasinoAmount, loader }) => {
   let { setWalletOpen, walletOpen } = useContext(AuthProvider);
+  const navigate=useNavigate()
   return (
     <div
       id="multiWalletDiv"
@@ -178,6 +180,7 @@ const WalletWrap = ({ user_coins, casionData, recallCasinoAmount, loader }) => {
             </dd>
           </dl>
         </div>
+        <div className="BtnRow">
         <div className="btn-box">
           <button
             className="btn ui-btn ui-shadow ui-corner-all"
@@ -186,6 +189,25 @@ const WalletWrap = ({ user_coins, casionData, recallCasinoAmount, loader }) => {
           >
             Close
           </button>
+        </div>
+        <div className="btn-box">
+          <button
+            className="btn ui-btn ui-shadow ui-corner-all"
+            id="balanceClose"
+            onClick={() => {setWalletOpen(false);navigate('/recharge')}}
+          >
+            Deposit
+          </button>
+        </div>
+        <div className="btn-box">
+          <button
+            className="btn ui-btn ui-shadow ui-corner-all"
+            id="balanceClose"
+            onClick={() => {setWalletOpen(false);navigate('/recharge')}}
+          >
+            Withdraw
+          </button>
+        </div>
         </div>
       </div>
     </div>

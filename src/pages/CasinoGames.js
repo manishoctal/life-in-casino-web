@@ -145,8 +145,7 @@ function CasinoGames() {
   return (
     <div>
 
-<Slider {...settings} className="GameSlider innerSlider">
-
+    <Slider {...settings} className="GameSlider innerSlider"> 
       {vendors?.length > 0
         ? vendors.map((item, index) => {
             if (item != "") {
@@ -169,9 +168,8 @@ function CasinoGames() {
               );
             }
           })
-        : ""}
-
-</Slider>
+        : ""} 
+    </Slider>
 
       <div>
         <a

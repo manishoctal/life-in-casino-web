@@ -26,12 +26,13 @@ function CasinoGames() {
 
   var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     centerMode: false,
     navigator:false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll:5
+    slidesToShow: 2,
+    slidesToScroll:2,
+    arrows: true,
   };
 
   const handlePageClick = (event) => {
@@ -145,40 +146,67 @@ function CasinoGames() {
     
     casinoGamesList(vendor);
   }, [vendor, searchKey, search_params, pageSize]);
+
+
+
+
+
+  const getTopCasinoGames = async () => {
+
+    let path = apiPath.getTopCasinoGames
+    try {
+        const response = await apiGet(path)
+        if (response && response?.data?.success) {
+          setVendors(response?.data?.results);
+
+        } else {
+            toast.error(response?.message || 'Something went wrong', {
+                className: 'bg-danger theme-color'
+            })
+        }
+    } catch (err) {
+        toast.error(err?.message || 'Something went wrong', {
+            className: 'bg-danger theme-color'
+        })
+    }
+}
+
+
+
+
+
+
+
   useEffect(() => {
-    casinoVenders();
+    // casinoVenders();
+    getTopCasinoGames()
   }, []);
   return (
-    <div> <h2 className="sectionHead" style={{padding:"0 0 0 2vw", textAlign:'center'}}>Provider Games</h2>
-      <div className="ProviderGame">
-       
-      <Slider {...settings} className="GameSlider">   
+    <div className="TopGameWrap">
+       <h2 className="sectionHead">Top Games</h2>
+
+      <Slider {...settings} className="GameSlider2">   
       {vendors?.length > 0
         ? vendors.map((item, index) => {
             if (item != "") {
               return (
               
-                <div className="gameCTG">
+                <div className="gameCTG topGameImage">
                 <a
                   key={index}
-                  className={item.name == vendor ? "entrance active" : "entrance"}
+                  className={item.game_name == vendor ? "entrance active" : "entrance"}
                   href="javascript:void(0)"
                   onClick={() => {
-                    // if (!isEmpty(user)) {
-                    if (item.name == "Evolution Gaming") {
-                      setVendor("DC");
-                      // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
+
+                    if (!isEmpty(user)) {
+                      casinoGameURL(item?.game_id, item?.provider_name);
                     } else {
-                      setVendor(item.name);
-                      // navigate("/casino-games");
+                      navigate("/login");
                     }
-                    // } else {
-                    //   navigate("/login");
-                    // }
-                  }}
-                >
-                   {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
-                  <dt style={{fontSize:'14px'}}>{item?.name}</dt>
+                  }} 
+                    >
+                   <span><img src={item?.url_thumb} alt=""/></span>
+                  <dt>{item?.game_name}</dt>
                  
                 </a>
                 </div>
@@ -189,57 +217,7 @@ function CasinoGames() {
           
         : ""}
         </Slider>
-        </div>
      
-      <div id="page">
-        <div className="mian-wrap">
-          <div className="gamehall homepageList">
-            {games.length > 0
-              ? games.map((item, index) => {
-                  return (
-                    <a
-                      key={index}
-                      className="entrance-half"
-                      href="javascript:void(0)"
-                      onClick={() => {
-                        if (!isEmpty(user)) {
-                          casinoGameURL(item?.game_id, item?.provider_name);
-                        } else {
-                          navigate("/login");
-                        }
-                      }}
-                      neua="Blackjack Banner"
-                    >
-                      {/* <dl className="entrance-title">
-                        <dt>{item.game_name}</dt>
-                        <dd>Play Now</dd> 
-                      </dl> */}
-                      <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
-                    </a>
-                  );
-                })
-              : ""}
-          </div>
-          {showLoadMore && <div style={{ display: "flex" }}>
-                        <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>
-                            {loader ? "Loading..." : "Load more..."}
-                        </Button>
-                    </div>}
-          {/* <div className="bottom-pagination">
-            <ReactPaginate
-              breakLabel="..."
-              nextLabel=" >"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              pageCount={pageCount}
-              previousLabel="< "
-              renderOnZeroPageCount={null}
-              activeClassName="p-0"
-              activeLinkClassName="pagintion-li"
-            />
-          </div> */}
-        </div>
-      </div>
     </div>
   );
 }

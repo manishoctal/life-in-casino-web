@@ -20,6 +20,7 @@ import SportsDetail from "./pages/SportsDetail";
 import BidDetail from "./pages/MatchDetails/BidDetail";
 import Recharge from "./pages/Recharge";
 import WithdrawRequest from "./pages/WithdrawRequest";
+import DepositRequest from './pages/DepositRequest'
 import PaymentWithdrawSubmit from "./pages/PaymentWithdrawSubmit";
 import PaymentSubmit from "./pages/PaymentSubmit";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
@@ -105,6 +106,7 @@ function App() {
         <Route exact path="/payment-submit" element={<PaymentSubmit />}></Route>
         <Route exact path="/payment-withdraw-submit" element={<PaymentWithdrawSubmit />}></Route>
         <Route exact path="/withdraw-requests" element={<WithdrawRequest />}></Route>
+        <Route exact path="/deposit-requests" element={<DepositRequest />}></Route>
         <Route exact path="/live-casino" element={<LiveCasino />}></Route>
         <Route exact path="/recharge" element={<Recharge />}></Route>
         <Route exact path="/casino-games" element={<CasinoGames />}></Route>
