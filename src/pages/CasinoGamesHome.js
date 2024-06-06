@@ -178,7 +178,7 @@ function CasinoGames() {
                   }}
                 >
                    {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
-                  <dt style={{fontSize:'14px'}}>{item?.name}</dt>
+                  <dt style={{fontSize:'14px', marginBottom:"0"}}>{item?.name}</dt>
                  
                 </a>
                 </div>

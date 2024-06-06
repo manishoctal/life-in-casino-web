@@ -185,7 +185,7 @@ function CasinoGames() {
     <div className="TopGameWrap">
        <h2 className="sectionHead">Top Games</h2>
 
-      <Slider {...settings} className="GameSlider2">   
+      <Slider {...settings} className="GameSlider topGameSlider2" >   
       {vendors?.length > 0
         ? vendors.map((item, index) => {
             if (item != "") {
@@ -205,8 +205,8 @@ function CasinoGames() {
                     }
                   }} 
                     >
-                   <span><img src={item?.url_thumb} alt=""/></span>
-                  <dt>{item?.game_name}</dt>
+                   {/* <span><img src={item?.url_thumb} alt=""/></span> */}
+                  <dt className="TopGameTabs">{item?.game_name}</dt>
                  
                 </a>
                 </div>

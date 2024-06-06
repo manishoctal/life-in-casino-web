@@ -19459,4 +19459,14 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
     font-family: Helvetica, Tahoma, sans-serif;
     padding: 2.66667vw 1.86667vw;
     width: 49vw;
+}dt.TopGameTabs {
+    background-color: #44484c;
+    color: #ffdd74;
+    border: 1px solid #ffdd74;
+    padding: 10px;
+    border-radius: 10px;
+   
+}
+.GameSlider.topGameSlider2 {
+    background: transparent;
 }
