@@ -86,7 +86,7 @@ function PaymentSubmit(props) {
     return (
         <div>
             <div className="instration_wrap">
-                <div className="instration__colapse">
+                {/* <div className="instration__colapse">
                     <strong>Instruction</strong>
                     <ol>
                         <li>
@@ -109,7 +109,7 @@ function PaymentSubmit(props) {
                             will be proceeded.
                         </li>
                     </ol>
-                </div>
+                </div> */}
 
                 <div className="transfer_section">
                     <div className="instration_title">1. Make a Transfer</div>
