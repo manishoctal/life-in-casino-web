@@ -149,7 +149,8 @@ function CasinoGames() {
     casinoVenders();
   }, []);
   return (
-    <div> <h2 className="sectionHead" style={{padding:"0 0 0 2vw", textAlign:'center'}}>Provider Games</h2>
+    <div> 
+      {/* <h2 className="sectionHead" style={{padding:"0 0 0 2vw", textAlign:'center'}}>Provider Games</h2> */}
       <div className="ProviderGame">
        
       <Slider {...settings} className="GameSlider">   

@@ -163,7 +163,7 @@ function Home() {
       </div>
       <div id="page">
         <div className="mian-wrap">
-          <TopCasinoGames/>
+          {/* <TopCasinoGames/> */}
           <CasinoGamesHome />
 
           {/* <div className="support-wrap extend-support">
