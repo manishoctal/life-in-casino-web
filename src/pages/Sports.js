@@ -112,7 +112,7 @@ function Sports() {
           style={{ width: "100%" }}
         />
       </a> */}
-      <div className="mian-wrap">
+      {/* <div className="mian-wrap">
         <div id="highlightLabel" className="highlight-fix">
           <a
             className="a-search"
@@ -126,7 +126,7 @@ function Sports() {
             className="wrap-highlight ps ps--theme_default ps--active-x"
             style={{ overflow: "auto" }}
           >
-            <ul id="label" style={{ left: "0px" }}>
+            <ul id="label" style={{ left: "0px" }}> */}
               {/* {!isEmpty(user) && (
                 <li className="menu-casino">
                   <span className="tag-new">New</span>
@@ -157,7 +157,7 @@ function Sports() {
                 </li>
               )} */}
 
-              <li
+              {/* <li
                 id="highlightTab4"
                 className={sports == "cricket" ? "select" : ""}
               >
@@ -178,9 +178,9 @@ function Sports() {
                   />
                   Cricket
                 </a>
-              </li>
+              </li> */}
 
-              <li
+              {/* <li
                 id="highlightTab1"
                 className={sports == "soccer" ? "select" : ""}
               >
@@ -197,9 +197,9 @@ function Sports() {
                   />
                   Soccer
                 </a>
-              </li>
+              </li> */}
 
-              <li
+              {/* <li
                 id="highlightTab2"
                 className={sports == "tennis" ? "select" : ""}
               >
@@ -216,7 +216,7 @@ function Sports() {
                   />
                   Tennis
                 </a>
-              </li>
+              </li> */}
               {/* {!isEmpty(user) && (
                 <li className="menu-casino">
                   <a
@@ -276,11 +276,11 @@ function Sports() {
                   Horse Racing
                 </a>
               </li> */}
-            </ul>
+            {/* </ul>
           </div>
-        </div>
+        </div> */}
 
-        <div className="wrap-highlight_list">
+        {/* <div className="wrap-highlight_list">
           <h3>Highlights</h3>
 
           <ul id="highlightList" className="highlight-list">
@@ -305,16 +305,16 @@ function Sports() {
                       state={item}
                       to={`/match-details/${item?.eventId}/${item?.marketId}`}
                     >
-                      <dl>
-                        <dt>
+                      <dl> */}
+                        {/* <dt> */}
                           {/* {item?.channel !== "false" && ( */}
-                          <span
+                          {/* <span
                             id="streamingIcon"
                             className="game-live"
                             style={{ display: "flex" }}
                           >
                             game-live
-                          </span>
+                          </span> */}
                           {/* )} */}
                           {/* <span
                             id="lowLiquidityTag"
@@ -323,7 +323,7 @@ function Sports() {
                           >
                             Low Liquidity
                           </span> */}
-                          <span
+                          {/* <span
                             id="bookMakerIcon"
                             className={`game-bookmaker game-odds ${"in-play"}`}
                             style={{ display: "flex" }}
@@ -355,7 +355,7 @@ function Sports() {
                             style={{ display: "flex" }}
                           >
                             Sportsbook
-                          </span>
+                          </span> */}
                           {/* {item?.bookmakerRunners &&
                             item?.bookmakerRunners?.length > 0 && (
                               <span
@@ -378,7 +378,7 @@ function Sports() {
                             </span>
                           )} */}
 
-                          {obj.days == 0 &&
+                          {/* {obj.days == 0 &&
                             obj.hours == 0 &&
                             obj?.years == 0 &&
                             obj?.months == 0 &&
@@ -400,15 +400,15 @@ function Sports() {
                             item?.gameType == 'soccer' && (item?.eventName.includes(" SRL T20 ") || item?.eventName.includes(" T10 ")) && (
                               <span
                                 id="sportsBookEIcon_1"
-                                className="game-E"
-                              // style={{ display: "none" }}
-                              >
+                                className="game-E" */}
+                              {/* // style={{ display: "none" }} */}
+                              {/* >
                                 <i></i>Soccer
                               </span>
                             )
-                          }
+                          } */}
 
-                          {
+                          {/* {
                             item?.gameType == 'cricket' && (item?.eventName.includes(" SRL T20 ") || item?.eventName.includes(" T10 ")) && (
                               <span
                                 id="sportsBookEIcon_4"
@@ -457,10 +457,23 @@ function Sports() {
                 );
               })}
           </ul>
-        </div>
+        </div> */}
 
 
-      </div>
+      {/* </div> */}
+
+
+
+
+      <div class="containermain">
+  <div class="centeredmain">
+    <h1>Coming Soon...</h1>
+  </div>
+</div>
+
+
+
+
     </>
   );
 }

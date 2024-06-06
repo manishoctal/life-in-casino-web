@@ -54,8 +54,8 @@ function PaymentSubmit(props) {
         }
 
         formData.append("amount", data.amount);
-        formData.append("customerName", data.customerName);
-        formData.append("utrNumber", data.utrNumber);
+        // formData.append("customerName", data.customerName);
+        // formData.append("utrNumber", data.utrNumber);
 
         try {
             const { status, data: response_users } = await apiPost(
@@ -192,7 +192,7 @@ function PaymentSubmit(props) {
                             </Form.Group>
                         </dd>
 
-                        <dd>
+                        {/* <dd>
                             <Form.Group>
                                 <Form.Control
                                     placeholder="Enter Customer Name"
@@ -223,7 +223,7 @@ function PaymentSubmit(props) {
                                     </label>
                                 )}
                             </Form.Group>
-                        </dd>
+                        </dd> */}
 
                         <dd>
                             <Form.Group>

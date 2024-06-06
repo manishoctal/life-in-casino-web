@@ -75,6 +75,7 @@ const pathObj = {
   paymentList: "/v1/user/payment/getList",
   submitPaymentRequest: "/v1/user/payment/submit-payment-request",
   submitPaymentWithrowRequest: "/v1/user/payment/submit-withdraw-payment-request",
+  getBankDetails:'/v1/user/payment//bank-list'
 };
 
 export default pathObj;

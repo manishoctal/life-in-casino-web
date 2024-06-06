@@ -53,21 +53,16 @@ function Recharge(props) {
     return (
         <div>
             <div className="account_detail">
-                <div className="acc-number-main">
+                {/* <div className="acc-number-main">
                     <dd className="acc-number">ACCOUNT {oneClickData?.username}  </dd>
                     <p>Select payment method to top up your account: </p>
                 </div>
-                {/* <dd>
-          <label className="payment_system">
-            <input type="checkbox" className="theme_checkbox" />
-            Payment systems in your region
-          </label>
-        </dd> */}
+
 
                 <div className="excl">
                     If you do not receive the deposit amount in your gaming account within
                     3 hours please contact our general queries with the proof of transaction confirmation.
-                </div>
+                </div> */}
 
 
                 <div className="bank_block">

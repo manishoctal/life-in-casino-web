@@ -19426,3 +19426,37 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
     top: 0; /* Keeps the header fixed when scrolling */
   }
   /* withdraw table request scroll  end */
+
+
+
+
+  /* div center */
+  .containermain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Full height of the viewport */
+  }
+  
+  .centeredmain {
+    padding: 20px;
+    /* background-color: lightgray; */
+  }
+
+
+
+
+  /* bank select */
+
+
+.bankselect{
+    background: #fff;
+    border: 1px solid #aaa;
+    box-shadow: inset 0 .53333vw 0 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1.6vw;
+    color: #1e1e1e;
+    font-size: 4vw;
+    font-family: Helvetica, Tahoma, sans-serif;
+    padding: 2.66667vw 1.86667vw;
+    width: 49vw;
+}
