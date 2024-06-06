@@ -25,7 +25,7 @@ function CasinoGames() {
   });
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     centerMode: false,
     navigator:false,
