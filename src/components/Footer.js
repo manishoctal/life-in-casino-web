@@ -124,7 +124,7 @@ y
           </li> */}
 
           <li id="support">
-            <Link to={"http://Wa.me/+917899413279"} target="_blank" neua="Multi Markets" className="ui-link">
+            <Link to={"http://Wa.me/+919164256270"} target="_blank" neua="Multi Markets" className="ui-link">
               <img
                 className="icon-pin2"
                 src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/whatsup_gray.png"}
