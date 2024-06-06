@@ -77,7 +77,9 @@ function WithdrawRequest(props,) {
 
                                 return (
                                     <tr key={index}>
-                                        <td>{request?.paymentStatus?startCase(request?.paymentStatus):startCase(request.status)}</td>
+
+                                       <td style={{ fontWeight: 700, color: request?.paymentStatus=='approved'?'green':request?.paymentStatus=='decline'?'red':request?.status == 'active'? 'blue' :request?.status == 'pending'?'yellow': 'red' }}>{request?.paymentStatus?startCase(request?.paymentStatus): startCase(request?.status)}</td>
+
                                         {/* <td>{request.createdAt}</td> */}
                                         <td>{helpers.dateFormat(
                                             request.createdAt,

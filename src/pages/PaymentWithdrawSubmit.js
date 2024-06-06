@@ -23,7 +23,7 @@ function PaymentWithdrawSubmit(props,) {
         reset
     } = useForm({
         defaultValues: {
-            amount: profileData?.totalCoins
+            // amount: 0
         }
     }
     );
@@ -39,12 +39,15 @@ function PaymentWithdrawSubmit(props,) {
         }
     }
     const onSubmit = async (data) => {
+        console.log('data', data)
         setLoader(true)
         const formData = {
             amount: data.amount,
-            paymentManagerDetails: data.paymentManagerDetails,
             paymentManagerName: paymentObj?.paymentName,
-            customerName: profileData?.username
+            customerName: profileData?.username,
+            ifscCode: data?.ifscCode,
+            accountNumber: data?.accountNumber,
+            bankName: data?.bankName
         };
 
         // if (selectedFile) {
@@ -169,22 +172,118 @@ function PaymentWithdrawSubmit(props,) {
                                     type="number"
 
                                     // disabled={true}
-
+                                    placeholder="Enter Amount"
+                                    style={{ marginBottom: '0px' }}
                                     className={errors.amount ? " is-invalid " : ""}
                                     {...register("amount", {
-                                        required: "Please enter amount",
+                                        required: "Please enter amount.",
                                         validate: (value) => { return value > profileData?.totalCoins ? 'Amount should be less than your balance' : value == 0 ? 'Amount should be not zero' : true },
                                     })}
                                 /><br />
-                                {errors.amount &&
-                                    errors.amount.message && (
-                                        <label className="invalid-feedback text-left">
-                                            {errors.amount.message}
-                                        </label>
-                                    )}
+
+                                <div style={{ marginBottom: '10px' }}>
+                                    {errors.amount &&
+                                        errors?.amount?.message && (
+                                            <span className="invalid-feedback text-left" style={{ color: 'red' }}>
+                                                {errors.amount.message}
+                                            </span>
+                                        )}
+                                </div>
                             </Form.Group>
                         </dd>
 
+                        <dd>
+                            <Form.Group>
+                                {/* <Form.Label>Amount:</Form.Label> */}
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Bank Name"
+                                    style={{ marginBottom: '0px' }}
+                                    className={errors.amount ? " is-invalid " : ""}
+                                    {...register("bankName", {
+                                        required: "Please enter bank name.",
+                                        validate: {
+                                            whiteSpace: value => (value.trim() ? true : 'White space not allowed.')
+                                        }
+                                    })}
+                                /><br />
+
+                                <div style={{ marginBottom: '10px' }}>
+                                    {errors?.bankName && (
+                                        <span className="invalid-feedback text-left" style={{ color: 'red' }}>
+                                            {errors.bankName.message}
+                                        </span>
+                                    )}
+                                </div>
+                            </Form.Group>
+                        </dd>
+
+                        <dd>
+                            <Form.Group>
+                                {/* <Form.Label>Amount:</Form.Label> */}
+                                <Form.Control
+                                    type="number"
+
+                                    placeholder="Enter Account Number"
+                                    style={{ marginBottom: '0px' }}
+                                    className={errors.amount ? " is-invalid " : ""}
+                                    {...register("accountNumber", {
+                                        required: "Please enter account number.",
+                                        minLength: {
+                                            value: 12,
+                                            message: 'Account number must be at least 12.'
+                                        },
+                                        maxLength: {
+                                            value: 16,
+                                            message: 'Account number must be at most 16'
+                                        },
+                                        validate: {
+                                            whiteSpace: value => (value.trim() ? true : 'White space not allowed.')
+                                        }
+                                    })}
+                                /><br />
+
+                                <div style={{ marginBottom: '10px' }}>
+                                    {errors?.accountNumber && (
+                                        <span className="invalid-feedback text-left" style={{ color: 'red' }}>
+                                            {errors.accountNumber.message}
+                                        </span>
+                                    )}
+                                </div>
+                            </Form.Group>
+                        </dd>
+                        <dd>
+                            <Form.Group>
+                                {/* <Form.Label>Amount:</Form.Label> */}
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter IFSC Code"
+                                    style={{ marginBottom: '0px' }}
+                                    className={errors.amount ? " is-invalid " : ""}
+                                    {...register("ifscCode", {
+                                        required: "Please enter IFSC code.",
+                                        pattern: {
+                                            value: /^[A-Z]{4}0[A-Z0-9]{6}$/,
+                                            message: 'Please enter valid IFSC code.'
+                                          },
+                                        validate: {
+                                            whiteSpace: value => (value.trim() ? true : 'White space not allowed.')
+                                        }
+                                    })}
+                                /><br />
+
+                                <div style={{ marginBottom: '10px' }}>
+                                    {errors?.ifscCode && (
+                                        <span className="invalid-feedback text-left" style={{ color: 'red' }}>
+                                            {errors.ifscCode.message}
+                                        </span>
+                                    )}
+                                </div>
+                            </Form.Group>
+                        </dd>
+
+
+                        {/* 
                         <dd>
                             <Form.Group>
                                 <Form.Control
@@ -198,12 +297,12 @@ function PaymentWithdrawSubmit(props,) {
                                 />
                                 {errors.paymentManagerDetails &&
                                     errors.paymentManagerDetails.message && (
-                                        <label className="invalid-feedback text-left">
+                                        <span className="invalid-feedback text-left" style={{color:'red'}}>
                                             {errors.paymentManagerDetails.message}
-                                        </label>
+                                        </span>
                                     )}
                             </Form.Group>
-                        </dd>
+                        </dd> */}
                         {/* <dd>
                             <Form.Group>
                                 <Form.Control

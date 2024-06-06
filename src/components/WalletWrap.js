@@ -194,7 +194,7 @@ const WalletWrap = ({ user_coins, casionData, recallCasinoAmount, loader }) => {
           <button
             className="btn ui-btn ui-shadow ui-corner-all"
             id="balanceClose"
-            onClick={() => {setWalletOpen(false);navigate('/recharge')}}
+            onClick={() => {setWalletOpen(false);navigate('/recharge',{state:{from:'deposit'}})}}
           >
             Deposit
           </button>
@@ -203,7 +203,7 @@ const WalletWrap = ({ user_coins, casionData, recallCasinoAmount, loader }) => {
           <button
             className="btn ui-btn ui-shadow ui-corner-all"
             id="balanceClose"
-            onClick={() => {setWalletOpen(false);navigate('/recharge')}}
+            onClick={() => {setWalletOpen(false);navigate('/recharge',{state:{from:'withdraw'}})}}
           >
             Withdraw
           </button>

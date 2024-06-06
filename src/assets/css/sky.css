@@ -19381,3 +19381,48 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
     background-clip: text;
     color: transparent;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* withdraw table request scroll */
+
+.table-wrapper {
+    /* max-height: 400px;  */
+     overflow-y: auto;
+    /* overflow-x: auto; */
+  }
+  
+  .table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .table-wrapper th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0; /* Keeps the header fixed when scrolling */
+  }
+  /* withdraw table request scroll  end */

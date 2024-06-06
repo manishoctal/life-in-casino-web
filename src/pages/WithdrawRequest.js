@@ -1,4 +1,4 @@
-import { isEmpty } from "lodash";
+import { isEmpty, startCase } from "lodash";
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { Form, Button, Table } from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
@@ -63,56 +63,42 @@ function WithdrawRequest(props,) {
     return (
         <div>
             <div className="responsive">
-                <Table>
-                    <thead>
-                        <tr>
-                            <th scope="col"> Status </th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Image</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {result &&
-                            result?.map((request, index) => {
-
-                                return (
-                                    <tr key={index}>
-                                        <td>{request.status}</td>
-                                        {/* <td>{request.createdAt}</td> */}
-                                        <td>{helpers.dateFormat(
-                                            request.createdAt,
-                                            user.timeZone
-                                        )}</td>
-
-                                        <td><a href={request?.imageUrl} target="_blank"><img src={request?.imageUrl} alt={request?.imageUrl} style={{ width: `100px` }}></img></a></td>
-
-
-                                    </tr>
-                                );
-                            })}
-                        {isEmpty(result) ? (
+                <div className="table-wrapper">
+                    <Table>
+                        <thead>
                             <tr>
-                                <td colSpan={9}>No records found</td>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Bank Name</th>
+                                <th scope="col">Account Number</th>
+                                <th scope="col">IFSC Code</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Date</th>
                             </tr>
-                        ) : null}
-                    </tbody>
-                </Table>
-                {/* <div className="bottom-pagination">
-                    <ReactPaginate
-                        breakLabel="..."
-                        nextLabel=" >"
-                        forcePage={viewpage}
-                        onPageChange={handlePageClick}
-                        pageRangeDisplayed={10}
-                        pageCount={pageCount}
-                        previousLabel="< "
-                        renderOnZeroPageCount={null}
-                        activeClassName="p-1"
-                        activeLinkClassName="pagintion-li"
-                    />
-                </div> */}
+                        </thead>
+                        <tbody>
+                            {result &&
+                                result?.map((request, index) => (
+                                    <tr key={index}>
+                                        <td>{request?.amount}</td>
+                                        <td>{request?.bankName || 'N/A'}</td>
+                                        <td>{request?.accountNumber || 'N/A'}</td>
+                                        <td>{request?.ifscCode || 'N/A'}</td>
+                                        <td style={{ fontWeight: 700, color: request?.status === 'Completed' ? 'green' : request?.status === 'Pending' ? '#fecc2b' : 'red' }}>
+                                            {request?.paymentStatus ? startCase(request?.paymentStatus) : startCase(request?.status)}
+                                        </td>
+                                        <td>{helpers.dateFormat(request.createdAt, user.timeZone)}</td>
+                                    </tr>
+                                ))}
+                            {isEmpty(result) && (
+                                <tr>
+                                    <td colSpan={9}>No records found</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </Table>
+                </div>
             </div>
+
         </div>
 
     );
