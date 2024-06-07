@@ -12,7 +12,7 @@ import ReactPaginate from "react-paginate";
 function CasinoGames() {
   const location = useLocation();
   const [vendors, setVendors] = useState();
-  const [vendor, setVendor] = useState();
+  const [vendor, setVendor] = useState('topGames');
   const [games, setGames] = useState([]);
   const [searchKey, setSearchKey] = useState(location?.state?.searchKey ? "Evolution Top Games" : "");
   const [page, setPage] = useState(1);
@@ -28,14 +28,14 @@ function CasinoGames() {
     dots: true,
     infinite: true,
     centerMode: false,
-    navigator:false,
+    navigator: false,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll:5
+    slidesToScroll: 5
   };
 
   const handlePageClick = (event) => {
-    
+
     setSearchParams((prevState) => {
       return {
         ...prevState,
@@ -70,7 +70,7 @@ function CasinoGames() {
                 }
               });
             }
-            if (data.length > 0) setVendor(data[0].name);
+            // if (data.length > 0) setVendor(data[0].name);
             setVendors(data);
             setLoader(false);
           }
@@ -142,90 +142,162 @@ function CasinoGames() {
   };
 
   useEffect(() => {
-    
+
     casinoGamesList(vendor);
   }, [vendor, searchKey, search_params, pageSize]);
+
+
+
+  const [casinoGames, setCasinoGames] = useState([])
+  const getTopCasinoGames = async () => {
+
+    let path = apiPath.getTopCasinoGames
+    try {
+      const response = await apiGet(path)
+      if (response && response?.data?.success) {
+
+        setCasinoGames(response?.data?.results);
+
+      } else {
+        toast.error(response?.message || 'Something went wrong', {
+          className: 'bg-danger theme-color'
+        })
+      }
+    } catch (err) {
+      toast.error(err?.message || 'Something went wrong', {
+        className: 'bg-danger theme-color'
+      })
+    }
+  }
+
+
+
+
+
   useEffect(() => {
     casinoVenders();
+    getTopCasinoGames()
   }, []);
+
+
   return (
-    <div> 
+    <div>
       {/* <h2 className="sectionHead" style={{padding:"0 0 0 2vw", textAlign:'center'}}>Provider Games</h2> */}
       <div className="ProviderGame">
-       
-      <Slider {...settings} className="GameSlider">   
-      {vendors?.length > 0
-        ? vendors.map((item, index) => {
-            if (item != "") {
-              return (
-              
-                <div className="gameCTG">
-                <a
-                  key={index}
-                  className={item.name == vendor ? "entrance active" : "entrance"}
-                  href="javascript:void(0)"
-                  onClick={() => {
-                    // if (!isEmpty(user)) {
-                    if (item.name == "Evolution Gaming") {
-                      setVendor("DC");
-                      // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
-                    } else {
-                      setVendor(item.name);
-                      // navigate("/casino-games");
-                    }
-                    // } else {
-                    //   navigate("/login");
-                    // }
-                  }}
-                >
-                   {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
-                  <dt style={{fontSize:'14px', marginBottom:"0"}}>{item?.name}</dt>
-                 
-                </a>
-                </div>
-              );
-            }
-            
-          })
-          
-        : ""}
+
+        <Slider {...settings} className="GameSlider">
+          <div className="gameCTG">
+            <a
+              // key={index}
+              className={vendor == 'topGames' ? "entrance active" : "entrance"}
+              href="javascript:void(0)"
+              onClick={() => {
+                setVendor("topGames");
+              }}
+            >
+              <dt style={{ fontSize: '14px', marginBottom: "0" }}>Top Games</dt>
+
+            </a>
+          </div>
+
+          {vendors?.length > 0
+            ? vendors.map((item, index) => {
+              if (item != "") {
+                return (
+
+                  <div className="gameCTG">
+                    <a
+                      key={index}
+                      className={item.name == vendor ? "entrance active" : "entrance"}
+                      href="javascript:void(0)"
+                      onClick={() => {
+                        // if (!isEmpty(user)) {
+                        if (item.name == "Evolution Gaming") {
+                          setVendor("DC");
+                          // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
+                        } else {
+                          setVendor(item.name);
+                          // navigate("/casino-games");
+                        }
+                        // } else {
+                        //   navigate("/login");
+                        // }
+                      }}
+                    >
+                      {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
+                      <dt style={{ fontSize: '14px', marginBottom: "0" }}>{item?.name}</dt>
+
+                    </a>
+                  </div>
+                );
+              }
+
+            })
+
+            : ""}
         </Slider>
-        </div>
-     
+      </div>
+
       <div id="page">
         <div className="mian-wrap">
           <div className="gamehall homepageList">
-            {games.length > 0
-              ? games.map((item, index) => {
-                  return (
-                    <a
-                      key={index}
-                      className="entrance-half"
-                      href="javascript:void(0)"
-                      onClick={() => {
-                        if (!isEmpty(user)) {
-                          casinoGameURL(item?.game_id, item?.provider_name);
-                        } else {
-                          navigate("/login");
-                        }
-                      }}
-                      neua="Blackjack Banner"
-                    >
-                      {/* <dl className="entrance-title">
+
+            {vendor == 'topGames' ? casinoGames?.map((item, index) => {
+              return (
+                <a
+                  key={index}
+                  className="entrance-half"
+                  href="javascript:void(0)"
+                  onClick={() => {
+                    if (!isEmpty(user)) {
+                      casinoGameURL(item?.game_id, item?.provider_name);
+                    } else {
+                      navigate("/login");
+                    }
+                  }}
+                  neua="Blackjack Banner"
+                >
+                  {/* <dl className="entrance-title">
                         <dt>{item.game_name}</dt>
                         <dd>Play Now</dd> 
                       </dl> */}
-                      <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
-                    </a>
-                  );
-                })
+                  <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
+                </a>
+              );
+            }) : games.length > 0
+              ? games.map((item, index) => {
+                return (
+                  <a
+                    key={index}
+                    className="entrance-half"
+                    href="javascript:void(0)"
+                    onClick={() => {
+                      if (!isEmpty(user)) {
+                        casinoGameURL(item?.game_id, item?.provider_name);
+                      } else {
+                        navigate("/login");
+                      }
+                    }}
+                    neua="Blackjack Banner"
+                  >
+                    {/* <dl className="entrance-title">
+                          <dt>{item.game_name}</dt>
+                          <dd>Play Now</dd> 
+                        </dl> */}
+                    <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
+                  </a>
+                );
+              })
               : ""}
+
+
+
           </div>
           {showLoadMore && <div style={{ display: "flex" }}>
-                        <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>
-                            {loader ? "Loading..." : "Load more..."}
-                        </Button>
-                    </div>}
+            <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>
+              {loader ? "Loading..." : "Load more..."}
+            </Button>
+          </div>}
           {/* <div className="bottom-pagination">
             <ReactPaginate
               breakLabel="..."
