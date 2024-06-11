@@ -82,7 +82,7 @@ function Profile() {
               to={"/recharge"}
               state={{ from: 'deposit' }}
             >
-              Make Deposit
+              Deposit Money
             </Link>
           </li>
             <li className="">
@@ -90,7 +90,7 @@ function Profile() {
                 to={"/recharge"}
                 state={{ from: 'withdraw' }}
               >
-                Make Withdraw Request
+                Withdraw Money
               </Link>
             </li>
             <li className="">

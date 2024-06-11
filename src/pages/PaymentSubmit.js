@@ -244,7 +244,7 @@ function PaymentSubmit(props) {
                                 id="loginBtn"
                                 disabled={loader}
                             >
-                                {loader ? "Loading..." : "Make Payment"}
+                                {loader ? "Loading..." : "Submit"}
                             </Button>
                         </dd>
 

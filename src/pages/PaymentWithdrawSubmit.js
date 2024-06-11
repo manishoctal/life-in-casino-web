@@ -400,7 +400,7 @@ return (
 
                     <dd>
                         <Button type="submit" className="btn-send w-100" id="loginBtn" disabled={loader}>
-                            {loader ? "Loading..." : "Make Request"}
+                            {loader ? "Loading..." : "Submit"}
                         </Button>
                     </dd>
 
