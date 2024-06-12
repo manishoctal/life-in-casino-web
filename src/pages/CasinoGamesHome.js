@@ -60,10 +60,9 @@ function CasinoGames() {
       {
         breakpoint: 480, // Screen width at which settings will apply
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
-          initialSlide: 1,
-          variableWidth:true
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          variableWidth: true
         }
       }
     ]
@@ -96,11 +95,13 @@ function CasinoGames() {
                   return {
                     name: item.providerName,
                     image: `/assets/images/home/${item.providerName.toLowerCase()}.jpeg`,
+                    labelName: item.labelName,
                   };
                 } else {
                   return {
                     name: item.providerName,
                     image: "/assets/images/home/vendor.png",
+                    labelName: item.labelName,
                   };
                 }
               });
@@ -234,7 +235,7 @@ function CasinoGames() {
 
             </a>
           </div>
-
+          {console.log("vendors",vendors)}
           {vendors?.length > 0
             ? vendors.map((item, index) => {
               if (item != "") {
@@ -247,7 +248,7 @@ function CasinoGames() {
                       href="javascript:void(0)"
                       onClick={() => {
                         // if (!isEmpty(user)) {
-                        if (item.name == "Evolution Gaming" || item.name == "EVOLUTION") {
+                        if (item.name == "Evolution Gaming") {
                           setVendor("DC");
                           // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
                         } else {
@@ -260,7 +261,9 @@ function CasinoGames() {
                       }}
                     >
                       {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
-                      <dt style={{ fontSize: '14px', marginBottom: "0" }}>{item?.name}</dt>
+                      <dt style={{ fontSize: '14px', marginBottom: "0" }}>
+                        {item?.labelName}
+                      </dt>
 
                     </a>
                   </div>

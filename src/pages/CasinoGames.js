@@ -30,8 +30,9 @@ function CasinoGames() {
     centerMode: false,
     navigator:false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll:5
+    slidesToShow: 4,
+    slidesToScroll:4,
+    variableWidth: true
   };
 
   const handlePageClick = (event) => {
@@ -60,11 +61,13 @@ function CasinoGames() {
                   return {
                     name: item.providerName,
                     image: `/assets/images/home/${item.providerName.toLowerCase()}.jpeg`,
+                    labelName: item.labelName,
                   };
                 } else {
                   return {
                     name: item.providerName,
                     image: "/assets/images/home/vendor.png",
+                    labelName: item.labelName,
                   };
                 }
               });
@@ -159,7 +162,7 @@ function CasinoGames() {
                       navigate("/casino-games")
                   }}
                 >
-                  <dt>{item?.name}</dt>
+                  <dt>{item?.labelName}</dt>
                   <span>
                   <img className="withoutHover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gray.png`} alt=""/>
                   <img className="onhover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gold.png`} alt=""/>
