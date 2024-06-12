@@ -19187,7 +19187,7 @@ button.close-button {
     color: #fff;
 }
 
-.GameSlider a {color: #ffffff73;font-size: .8571428571428571rem;text-align: center;padding: 1.4vw 2vw;border-radius: 3vw;display: block;transition: all ease-in-out .3s;-webkit-transition: all ease-in-out .3s;}
+.GameSlider a {color: #ffffff73;font-size: .8571428571428571rem;text-align: center;padding: 1.4vw 2vw 1.1vw;border-radius: 1vw;display: block;transition: all ease-in-out .3s;-webkit-transition: all ease-in-out .3s;}
 
 .GameSlider a span img {
     max-width: 100%;
@@ -19198,7 +19198,7 @@ button.close-button {
 .GameSlider a dt {
     display: block;
     margin-bottom: 1.2354vw;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
     text-transform: uppercase;
     font-size: 12px !important;
 }

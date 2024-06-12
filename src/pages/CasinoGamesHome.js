@@ -24,14 +24,49 @@ function CasinoGames() {
     pageSize: 21,
   });
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    centerMode: false,
-    navigator: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   centerMode: false,
+  //   navigator: false,
+  //   speed: 500,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 5,
+  // };
+
+  const settings = {
+    dots: true, // Show dots at the bottom
+    infinite: true, // Enable infinite scrolling
+    speed: 500, // Transition speed
+    slidesToShow: 4, // Number of slides to show at once
+    slidesToScroll: 4, // Number of slides to scroll at once
+    responsive: [
+      {
+        breakpoint: 1024, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          initialSlide: 5,
+        }
+      },
+      {
+        breakpoint: 600, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          initialSlide: 3,
+        }
+      },
+      {
+        breakpoint: 480, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          initialSlide: 1,
+          variableWidth:true
+        }
+      }
+    ]
   };
 
   const handlePageClick = (event) => {
@@ -212,7 +247,7 @@ function CasinoGames() {
                       href="javascript:void(0)"
                       onClick={() => {
                         // if (!isEmpty(user)) {
-                        if (item.name == "Evolution Gaming") {
+                        if (item.name == "Evolution Gaming" || item.name == "EVOLUTION") {
                           setVendor("DC");
                           // navigate("/casino-games", { state: { searchKey: "Evolution Top Games", vendor: "Evolution Gaming" } });
                         } else {
