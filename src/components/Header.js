@@ -252,8 +252,8 @@ const Header = () => {
         </header>
       )}
       {isEmpty(user) && (
-        <header style={{ display: "flex", alignItems:"center" }}>
-          <h1 className="top-logo"></h1>
+        <header style={{alignItems:"center" }}>
+          <a href="/" style={{ display: "contents"}}><h1 className="top-logo"></h1></a>
           {/* <a className="btn-signup ui-link">Sign up</a> */}
           <Link to="/login" className="login-index ui-link">
             Login
