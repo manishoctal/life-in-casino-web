@@ -134,7 +134,7 @@ const Header = () => {
       {!isEmpty(user) && (
         <header id="headerMain1">
           <ul>
-            <li className="logo logoInner"><img src={process.env.REACT_APP_URL + "/assets/images/logo.svg"} alt="img" /></li>
+            <li className="logo logoInner"><a href="/" style={{"background-color":"transparent"}}><img src={process.env.REACT_APP_URL + "/assets/images/logo.svg"} alt="img" /></a></li>
             {/* <li><h6 className="top-logo"></h6></li> */}
             <li className="li-tv_bet">
               {location?.pathname?.split("/")[1] == "match-details" &&
