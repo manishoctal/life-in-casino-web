@@ -134,6 +134,9 @@ const Header = () => {
       {!isEmpty(user) && (
         <header id="headerMain1">
           <ul>
+            {
+              location.pathname == "/casino-game-play" ? <a href="/" style={{"background":"transparent","padding": "0px"}}><img src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/back.png"} alt="img" /></a> : ""
+            }
             <li className="logo logoInner"><a href="/" style={{"background-color":"transparent"}}><img src={process.env.REACT_APP_URL + "/assets/images/logo.svg"} alt="img" /></a></li>
             {/* <li><h6 className="top-logo"></h6></li> */}
             <li className="li-tv_bet">

@@ -125,7 +125,7 @@ function App() {
           element={<BidDetail />}
         ></Route>
       </Routes>
-      {location.pathname !== "/login" && location.pathname !== "/blog" && location.pathname !== "/web-view" &&(
+      {location.pathname !== "/login" && location.pathname !== "/blog" && location.pathname !== "/web-view" && location.pathname !== "/casino-game-play" &&(
         <Footer />
       )}
     </div>
