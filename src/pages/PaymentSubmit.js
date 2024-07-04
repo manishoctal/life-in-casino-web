@@ -167,6 +167,19 @@ function PaymentSubmit(props) {
                                 </span>
                             </div>
                         )}
+                        {paymentObj?.qrImageUrl && (
+                            <div className="card-layout__item card-layout__item_info">
+                                <span className="title">QR Code</span>
+                                <span className="copy_value">
+                                    <span className="card-layout__item_text">
+                                        <img src={paymentObj?.qrImageUrl} alt={paymentObj?.qrImageUrl} style={{ width: `100px` }}></img>
+                                    </span>
+                                    <span className="copy">
+                                        <img src="assets/images/copy.png" alt="" />
+                                    </span>
+                                </span>
+                            </div>
+                        )}
                     </div>
                 </div>
 

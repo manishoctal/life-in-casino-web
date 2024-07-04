@@ -19473,3 +19473,79 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
 .GameSlider.topGameSlider2 {
     background: transparent;
 }
+
+
+
+
+
+
+/* new */
+
+
+
+
+.dubbleGrid {
+    display: flex;
+    width: calc(100% - 0vw);
+    margin: 1.5vh 0;
+    gap: 5vw;
+  }
+  
+  .whiteWrapper {
+    border: 10vw;
+    background: #fff;
+    padding: 2.8vw 4vw;
+  }
+  
+  .dubbleGrid .whiteWrapper {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 2vw;
+    overflow: hidden;
+    box-shadow: 0 1vw 1vh rgba(0,0,0,.06);
+  }
+  
+  .whiteWrapperBlock {
+    margin: 1.666vh 0;
+    border-radius: 2vw;
+    overflow: hidden;
+    box-shadow: 0 1vw 1vh rgba(0,0,0,.06);
+  }
+  
+  .whiteWrapperBlock .whiteWrapper {
+    border-bottom: 1px solid #eee;
+  }
+
+  .iconLeft{
+    vertical-align: middle;
+    margin-right: 1vw;
+  }
+
+   
+
+
+  .btn.profileBtn {
+    white-space: nowrap;
+    padding: 0.4vh 3vw;
+    font-size: 3.5vw;
+    background-image: linear-gradient(-180deg, var(--theme1) 0%, var(--theme2) 100%);
+    border: 1px solid var(--theme2);
+    line-height: 2;
+    border-radius:2.5vw;
+}
+
+.profileHead {
+    align-items: center;
+    padding: 0.5vh  4vw;
+}
+
+.profileBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileBtn .iconLeft {
+    height: 3.2vh;
+
+}

@@ -18,102 +18,144 @@ function Profile() {
       <All_overlay />
 
       <div className="mian-wrap">
-        <div className="path-wrap">
+        <div className="path-wrap profileHead">
           <p className="account-id">
             <span>{user ? user?.user?.username : ""}</span>
             <span className="time-zone">{user ? user?.user?.timeZoneOffset : ""}</span>
           </p>
-        </div>
-
-        <ul className="menu-list">
-          <li className="">
-            <Link
+       
+          
+          <Link className="btn profileBtn"
               to={`/my-profile`}
             // target="_blank"
             >
-              My Profile
+              <span className="iconLeft"><img src="/assets/images/profileIcon/myprofile.png"/></span>My Profile
             </Link>
-          </li>
+          
+        </div>
 
-          <li className="">
-            <Link
-              to={`/balance`}
-            // target="_blank"
-            >
-              Balance Overview
-            </Link>
-          </li>
-          <li className="">
-            <Link
-              to={`/mybets`}
-            // target="_blank"
-            >
-              My Bets
-            </Link>
-          </li>
-          <li className="">
-            <Link
-              to={`/betshistory`}
-            // target="_blank"
-            >
-              Bets History
-            </Link>
-          </li>
+        <div style={{padding:"1vh 4vw"}}>
 
-          <li className="">
-            <Link
-              to={`/profit_loss`}
-            // target="_blank"
-            >
-              Profit &amp; Loss
-            </Link>
-          </li>
-
-          <li className="">
-            <Link
-              to={`/account-statement`}
-            // target="_blank"
-            >
-              Account Statement
-            </Link>
-          </li>
-          {process.env.REACT_APP_ENABLE_PAYMENT == 'true' && <> <li className="">
+        <div className="dubbleGrid">
+        {process.env.REACT_APP_ENABLE_PAYMENT == 'true' && <>
+        <div className="whiteWrapper">
+        <span className="iconLeft"><img src="/assets/images/profileIcon/DepositMoney.png"/></span>
             <Link
               to={"/recharge"}
               state={{ from: 'deposit' }}
             >
               Deposit Money
             </Link>
-          </li>
-            <li className="">
+          </div>
+            <div className="whiteWrapper">
+            <span className="iconLeft"><img src="/assets/images/profileIcon/WithdrawMoney.png"/></span>
               <Link
                 to={"/recharge"}
                 state={{ from: 'withdraw' }}
               >
                 Withdraw Money
               </Link>
-            </li>
-            <li className="">
+            </div>
+</>}
+
+        </div>
+
+ 
+       
+        <div className="whiteWrapperBlock">
+          <div className="whiteWrapper">
+          <span className="iconLeft"><img src="/assets/images/profileIcon/BalanceOverview.png"/></span>
+            <Link
+              to={`/balance`}
+            // target="_blank"
+            >
+              Balance Overview
+            </Link>
+          </div>
+          </div>
+ 
+
+          <div className="whiteWrapperBlock">
+          <div className="whiteWrapper">
+          <span className="iconLeft"><img src="/assets/images/profileIcon/MyBets.png"/></span>
+            <Link
+              to={`/mybets`}
+            // target="_blank"
+            >
+              My Bets
+            </Link>
+          </div>
+          <div className="whiteWrapper">
+          <span className="iconLeft"><img src="/assets/images/profileIcon/BetsHistory.png"/></span>
+            <Link
+              to={`/betshistory`}
+            // target="_blank"
+            >
+              Bets History
+            </Link>
+          </div>
+
+        </div>
+
+
+        <div className="whiteWrapperBlock">
+
+          <div className="whiteWrapper">
+          <span className="iconLeft"><img src="/assets/images/profileIcon/Profit&Loss.png"/></span>
+            <Link
+              to={`/profit_loss`}
+            // target="_blank"
+            >
+              Profit &amp; Loss
+            </Link>
+          </div>
+
+          <div className="whiteWrapper">
+          <span className="iconLeft"><img src="/assets/images/profileIcon/AccountStatement.png"/></span>
+            <Link
+              to={`/account-statement`}
+            // target="_blank"
+            >
+              Account Statement
+            </Link>
+          </div>
+
+          </div>
+          {process.env.REACT_APP_ENABLE_PAYMENT == 'true' && <>
+
+            <div className="whiteWrapperBlock">
+            <div className="whiteWrapper">
+            <span className="iconLeft"><img src="/assets/images/profileIcon/MyWithdrawRequests.png"/></span>
               <Link
                 to={"/withdraw-requests"}
                 state={{ from: 'withdraw' }}
               >
                 My Withdraw Requests
               </Link>
-            </li>
+            </div>
             
-            <li className="">
+            <div className="whiteWrapper">
+            <span className="iconLeft"><img src="/assets/images/profileIcon/MyDepositRequests.png"/></span>
               <Link
                 to={"/deposit-requests"}
                 state={{ from: 'deposit' }}
               >
                 My Deposit Requests
               </Link>
-            </li>
-            
+            </div>
+            </div>
+          
             </>
           }
-
+          <Button
+          style={{ width: "100%" }}
+          onClick={() => logoutUser()}
+          id="logout"
+          className="logout"
+        >
+          LOGOUT
+        </Button>
+  </div>
           {/* <li className="">
             <a
               href={`${process.env.REACT_APP_URL}activity-logs`}
@@ -123,16 +165,9 @@ function Profile() {
             </a>
           </li> */}
 
-        </ul>
+    
 
-        <Button
-          style={{ width: "100%" }}
-          onClick={() => logoutUser()}
-          id="logout"
-          className="logout"
-        >
-          LOGOUT
-        </Button>
+   
       </div>
     </>
   );
