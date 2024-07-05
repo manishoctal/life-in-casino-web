@@ -18846,6 +18846,7 @@ button.close-button {
     max-width: 100%;
     height: 5vh;
     margin: auto;
+    max-width: 90px;
 }
 
 .bank_block ul li a {
@@ -19549,3 +19550,10 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
     height: 3.2vh;
 
 }
+.d-flex {display: flex;}
+.align-items-center {align-items: center;}
+.text-dark {color: #000 !important;}
+.h-auto {height: auto !important;}
+.text-white{color: #fff !important;}
+.bg-success {background: #17c964;}
+.bg-danger {background: #f3124f;}

@@ -21,142 +21,128 @@ function Profile() {
         <div className="path-wrap profileHead">
           <p className="account-id">
             <span>{user ? user?.user?.username : ""}</span>
-            <span className="time-zone">{user ? user?.user?.timeZoneOffset : ""}</span>
+            <span className="time-zone">
+              {user ? user?.user?.timeZoneOffset : ""}
+            </span>
           </p>
-       
-          
-          <Link className="btn profileBtn"
-              to={`/my-profile`}
+
+          <Link
+            className="btn profileBtn"
+            to={`/my-profile`}
             // target="_blank"
-            >
-              <span className="iconLeft"><img src="/assets/images/profileIcon/myprofile.png"/></span>My Profile
-            </Link>
-          
+          >
+            <span className="iconLeft">
+              <img src="/assets/images/profileIcon/myprofile.png" />
+            </span>
+            My Profile
+          </Link>
         </div>
 
-        <div style={{padding:"1vh 4vw"}}>
-
-        <div className="dubbleGrid">
-        {process.env.REACT_APP_ENABLE_PAYMENT == 'true' && <>
-        <div className="whiteWrapper">
-        <span className="iconLeft"><img src="/assets/images/profileIcon/DepositMoney.png"/></span>
-            <Link
-              to={"/recharge"}
-              state={{ from: 'deposit' }}
-            >
-              Deposit Money
-            </Link>
+        <div style={{ padding: "1vh 4vw" }}>
+          <div className="dubbleGrid">
+            {process.env.REACT_APP_ENABLE_PAYMENT == "true" && (
+              <>
+                <Link
+                  to={"/recharge"}
+                  state={{ from: "deposit" }}
+                  className="whiteWrapper d-flex align-items-center text-white bg-success"
+                >
+                  <span className="iconLeft">
+                    <img src="/assets/images/profileIcon/DepositMoney.png" />
+                  </span>
+                  Deposit Money
+                </Link>
+                <Link
+                  to={"/recharge"}
+                  state={{ from: "withdraw" }}
+                  className="whiteWrapper d-flex align-items-center text-white bg-danger"
+                >
+                  <span className="iconLeft">
+                    <img src="/assets/images/profileIcon/WithdrawMoney.png" />
+                  </span>
+                  Withdraw Money
+                </Link>
+              </>
+            )}
           </div>
-            <div className="whiteWrapper">
-            <span className="iconLeft"><img src="/assets/images/profileIcon/WithdrawMoney.png"/></span>
-              <Link
-                to={"/recharge"}
-                state={{ from: 'withdraw' }}
-              >
-                Withdraw Money
-              </Link>
-            </div>
-</>}
-
-        </div>
-
- 
-       
-        <div className="whiteWrapperBlock">
-          <div className="whiteWrapper">
-          <span className="iconLeft"><img src="/assets/images/profileIcon/BalanceOverview.png"/></span>
-            <Link
-              to={`/balance`}
-            // target="_blank"
-            >
-              Balance Overview
-            </Link>
-          </div>
-          </div>
- 
 
           <div className="whiteWrapperBlock">
-          <div className="whiteWrapper">
-          <span className="iconLeft"><img src="/assets/images/profileIcon/MyBets.png"/></span>
-            <Link
-              to={`/mybets`}
-            // target="_blank"
-            >
-              My Bets
-            </Link>
-          </div>
-          <div className="whiteWrapper">
-          <span className="iconLeft"><img src="/assets/images/profileIcon/BetsHistory.png"/></span>
-            <Link
-              to={`/betshistory`}
-            // target="_blank"
-            >
-              Bets History
-            </Link>
-          </div>
-
-        </div>
-
-
-        <div className="whiteWrapperBlock">
-
-          <div className="whiteWrapper">
-          <span className="iconLeft"><img src="/assets/images/profileIcon/Profit&Loss.png"/></span>
-            <Link
-              to={`/profit_loss`}
-            // target="_blank"
-            >
-              Profit &amp; Loss
-            </Link>
-          </div>
-
-          <div className="whiteWrapper">
-          <span className="iconLeft"><img src="/assets/images/profileIcon/AccountStatement.png"/></span>
-            <Link
-              to={`/account-statement`}
-            // target="_blank"
-            >
-              Account Statement
-            </Link>
-          </div>
-
-          </div>
-          {process.env.REACT_APP_ENABLE_PAYMENT == 'true' && <>
-
-            <div className="whiteWrapperBlock">
-            <div className="whiteWrapper">
-            <span className="iconLeft"><img src="/assets/images/profileIcon/MyWithdrawRequests.png"/></span>
-              <Link
-                to={"/withdraw-requests"}
-                state={{ from: 'withdraw' }}
-              >
-                My Withdraw Requests
+             <Link
+                to={`/balance`}
+               className="whiteWrapper d-flex align-items-center">
+              <span className="iconLeft">
+                <img src="/assets/images/profileIcon/BalanceOverview.png" />
+              </span>
+                Balance Overview
               </Link>
-            </div>
-            
-            <div className="whiteWrapper">
-            <span className="iconLeft"><img src="/assets/images/profileIcon/MyDepositRequests.png"/></span>
+          </div>
+
+          <div className="whiteWrapperBlock">
               <Link
-                to={"/deposit-requests"}
-                state={{ from: 'deposit' }}
-              >
-                My Deposit Requests
+                to={`/mybets`} className="whiteWrapper d-flex align-items-center">
+              <span className="iconLeft">
+                <img src="/assets/images/profileIcon/MyBets.png" />
+              </span>
+             
+                My Bets
               </Link>
-            </div>
-            </div>
-          
+        
+              <Link
+                to={`/betshistory`} className="whiteWrapper d-flex align-items-center">
+              <span className="iconLeft">
+                <img src="/assets/images/profileIcon/BetsHistory.png" />
+              </span>
+                Bets History
+              </Link>
+          </div>
+
+          <div className="whiteWrapperBlock">
+            <Link
+                to={`/profit_loss`} className="whiteWrapper d-flex align-items-center">
+              <span className="iconLeft">
+                <img src="/assets/images/profileIcon/Profit&Loss.png" />
+              </span>
+                Profit &amp; Loss
+            </Link>
+
+              <Link
+                to={`/account-statement`} className="whiteWrapper d-flex align-items-center">
+              <span className="iconLeft">
+                <img src="/assets/images/profileIcon/AccountStatement.png" />
+              </span>
+               
+                Account Statement
+              </Link>
+          </div>
+          {process.env.REACT_APP_ENABLE_PAYMENT == "true" && (
+            <>
+              <div className="whiteWrapperBlock">
+              <Link to={"/withdraw-requests"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center">
+                  <span className="iconLeft">
+                    <img src="/assets/images/profileIcon/MyWithdrawRequests.png" />
+                  </span>
+                    My Withdraw Requests
+                  </Link>
+
+                  <Link to={"/deposit-requests"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center">
+                  <span className="iconLeft">
+                    <img src="/assets/images/profileIcon/MyDepositRequests.png" />
+                  </span>
+                    My Deposit Requests
+                  </Link>
+              </div>
             </>
-          }
+          )}
           <Button
-          style={{ width: "100%" }}
-          onClick={() => logoutUser()}
-          id="logout"
-          className="logout"
-        >
-          LOGOUT
-        </Button>
-  </div>
-          {/* <li className="">
+            style={{ width: "100%" }}
+            onClick={() => logoutUser()}
+            id="logout"
+            className="logout"
+          >
+            LOGOUT
+          </Button>
+        </div>
+        {/* <li className="">
             <a
               href={`${process.env.REACT_APP_URL}activity-logs`}
             // target="_blank"
@@ -164,10 +150,6 @@ function Profile() {
               Activity Log
             </a>
           </li> */}
-
-    
-
-   
       </div>
     </>
   );

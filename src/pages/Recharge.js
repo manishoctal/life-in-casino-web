@@ -84,8 +84,8 @@ function Recharge(props) {
                                             navigate("/login");
                                         }
                                     }}>
-                                        <figure><img src={item?.logoImageUrl} /></figure>
-                                        <figcaption>
+                                        <figure><img src={item?.logoImageUrl} className="h-auto" /></figure>
+                                        <figcaption className="text-dark">
                                             {item?.paymentName}
                                         </figcaption>
                                     </a>
