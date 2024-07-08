@@ -23,16 +23,38 @@ function CasinoGames() {
     pageSize: 21,
   });
 
-  var settings = {
-    dots: false,
-    arrows:false,
-    infinite: true,
-    centerMode: false,
-    navigator:false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll:4,
-    variableWidth: true
+  const settings = {
+    dots: true, // Show dots at the bottom
+    infinite: true, // Enable infinite scrolling
+    speed: 500, // Transition speed
+    slidesToShow: 4, // Number of slides to show at once
+    slidesToScroll: 4, // Number of slides to scroll at once
+    responsive: [
+      {
+        breakpoint: 1024, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          initialSlide: 5,
+        }
+      },
+      {
+        breakpoint: 600, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          initialSlide: 3,
+        }
+      },
+      {
+        breakpoint: 480, // Screen width at which settings will apply
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          variableWidth: true
+        }
+      }
+    ]
   };
 
   const handlePageClick = (event) => {
@@ -147,33 +169,40 @@ function CasinoGames() {
   }, []);
   return (
     <div>
+      <div className="ProviderGameInnerCasino">
+          <Slider {...settings} className="GameSlider"> 
+          <div>
+           
+          </div>
+            {vendors?.length > 0
+              ? vendors.map((item, index) => {
+                  if (item != "") {
+                    return (
+                      <div key={index} className="gameCTG">
+                          <a
+                            className={item.name == vendor ? "entrance active" : "entrance"}
+                            href="javascript:void(0)"
+                            onClick={() => {
+                              if (item.name == "Evolution Gaming") {
+                                setVendor("DC");
+                              } else {
+                                setVendor(item.name);
+                              }
+                            }}
+                          >
+                            {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
+                            <dt style={{ fontSize: '14px', marginBottom: "0" }}>
+                              {item?.labelName}
+                            </dt>
 
-    <Slider {...settings} className="GameSlider innerSlider"> 
-      {vendors?.length > 0
-        ? vendors.map((item, index) => {
-            if (item != "") {
-              return (
-                <a
-                  key={index}
-                  className={item.name == vendor ? "entrance active" : "entrance"}
-                  href="javascript:void(0)"
-                  onClick={() => {
-                      setVendor(item.name);
-                      navigate("/casino-games")
-                  }}
-                >
-                  <dt>{item?.labelName}</dt>
-                  <span>
-                  <img className="withoutHover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gray.png`} alt=""/>
-                  <img className="onhover" src={`/assets/images/casino/inner/${item?.name?.toLowerCase()}_gold.png`} alt=""/>
-                  </span>
-                </a>
-              );
-            }
-          })
-        : ""} 
-    </Slider>
-
+                          </a>
+                        </div>
+                    );
+                  }
+                })
+              : ""} 
+          </Slider>
+      </div>
       <div>
         <a
             className="a-search innerSearch"

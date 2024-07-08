@@ -19332,6 +19332,7 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
 /* new css */
 .TopGameWrap{padding:3vw; text-align:center;}
 .ProviderGame{ text-align:center;     background-color: #1b1f23; padding:1vh 0; margin:1vh 0 0 0;}
+.ProviderGameInnerCasino{ text-align:center;     background-color: #1b1f23; padding:1vh 0;}
 .topGameImage .entrance img {
     max-width: calc(100% - 2vw);
     min-height: 140px;
