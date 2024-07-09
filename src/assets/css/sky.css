@@ -26,6 +26,27 @@ body {
     scroll-behavior: smooth
 }
 
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #fdcb2a;
+}
+
+
+
+
 @media screen and (min-aspect-ratio: 16 / 9) {
 
     html,
@@ -3705,7 +3726,8 @@ header {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
+    
     height: 4rem;
     padding:1.66vw 1.86667vw 1vw 0;
     background-color: #d2d2d2;
@@ -4022,8 +4044,7 @@ header .a-open_tv img {
 }
 
 header .top-logo {
-    flex: 1;
-    width: 24.8vw;
+    width: 100px;
     height: 9.86667vw;
     background-repeat: no-repeat;
     background-size: contain;
@@ -4033,6 +4054,7 @@ header .top-logo {
 header .login-index {
     background: #e20000;
     font-weight:bold!important;
+    margin-left: auto;
 }
 
 /* header .login-index:before {
@@ -16614,7 +16636,7 @@ footer .login {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.6vw;
-    width: calc(100% - 3.2vw);
+    width: 100%;
     padding: 1.6vw
 }
 
@@ -19219,6 +19241,9 @@ filter: brightness(0) saturate(100%) invert(97%) sepia(18%) saturate(5144%) hue-
  .slick-dots {
     position: absolute;
     bottom: 0.9vh;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .GameSlider .slick-dots button {
@@ -19558,3 +19583,7 @@ header a.a-setting img {width: 4.06667vw;padding-left: 0;}
 .text-white{color: #fff !important;}
 .bg-success {background: #17c964;}
 .bg-danger {background: #f3124f;}
+
+
+
+.ProviderGameInnerCasino .slick-prev, .ProviderGameInnerCasino .slick-next {display: none !important;}

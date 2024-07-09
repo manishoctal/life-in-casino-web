@@ -21,7 +21,7 @@ function CasinoGamePlay() {
                 <div className="">
                     <div className="gamehal">
                         {casinoGameUrl ?
-                            <iframe id="miniGameIframe" allowFullScreen="allowFullScreen" className="casino-game" src={casinoGameUrl}>
+                            <iframe id="miniGameIframe" allowFullScreen="allowFullScreen" className="casino-game" src={casinoGameUrl} style={{border: 0, margin: 0, padding: 0}}>
                             </iframe>
                             : ""}
                     </div>

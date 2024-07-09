@@ -98,7 +98,7 @@ const Header = () => {
   const mainBalanceClick = async () => {
     const { status, data: response_users } = await apiPost(apiPath.awcBalance);
     if (status === 200) {
-      setCasinoData(response_users.data.balance);
+      setCasinoData(response_users?.data?.balance);
     }
   };
   const getCoins = async () => {
