@@ -267,8 +267,8 @@ return (
                                 {...register("accountNumber", {
                                     required: "Please enter account number.",
                                     minLength: {
-                                        value: 12,
-                                        message: 'Account number must be at least 12.'
+                                        value: 11,
+                                        message: 'Account number must be at least 11.'
                                     },
                                     maxLength: {
                                         value: 16,
