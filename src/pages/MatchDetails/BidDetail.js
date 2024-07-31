@@ -1594,7 +1594,7 @@ window.addEventListener('offline', () => {
             (betSelectionObj?.bidPrice * betSelectionObj.fancyOddSelect) / 100;
           if (currentPosition) currentPosition.newPosition = backProfit;
           const result = fancyList.map((data) => {
-            if (data.selectionId == currentPosition.selectionId) {
+            if (data?.selectionId == currentPosition?.selectionId) {
               data.newPosition = currentPosition.newPosition
                 ? parseFloat(currentPosition.newPosition).toFixed(2)
                 : null;
@@ -1909,7 +1909,7 @@ window.addEventListener('offline', () => {
                 src={`https://diamondapi.uk/dcasino/sr.php?eventid=${details.eventId}&sportid=${details.eventType}`}
               ></iframe>
               <ul class="match-btn" style={{ paddingBottom: "10px" }}>
-                <li>
+                {/* <li>
                   <a
                     onClick={() => {
                       if (isEmpty(user)) {
@@ -1928,11 +1928,11 @@ window.addEventListener('offline', () => {
                   >
                     Pin
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     href="javascript:void(0)"
-                    class="btn-refresh"
+                    class="btn-refresh new-btn-refresh"
                     onClick={() => {
                       getMatchDetails();
                     }}
@@ -1952,7 +1952,7 @@ window.addEventListener('offline', () => {
                 <tbody>
                   <tr>
                     <th>
-                      <a
+                      {/* <a
                         onClick={() => {
                           if (isEmpty(user)) {
                             navigate("/login");
@@ -1965,7 +1965,7 @@ window.addEventListener('offline', () => {
                           !isEmpty(details?.multi_market) ? "pin-on" : "pin-off"
                         }
                         href="javascript:void(0)"
-                      ></a>
+                      ></a> */}
                       <h4 id="teamHome">{details?.eventName?.split("v")[0]}</h4>
                       <h4 id="teamAway">{details?.eventName?.split("v")[1]}</h4>
                       <ul id="time" class="scores-time">
@@ -2147,7 +2147,7 @@ window.addEventListener('offline', () => {
                       <>
                         <span>
                           <pre>in-play</pre>
-                          Preminum Fancy
+                          Premium Fancy
                         </span>
                         <a
                           href="javascript:void(0)"
@@ -2179,7 +2179,7 @@ window.addEventListener('offline', () => {
                         className="other-tab"
                       >
                         <span className="tag-new">New</span>
-                        Preminum Fancy
+                        Premium Fancy
                       </a>
                     ) : (
                       ""

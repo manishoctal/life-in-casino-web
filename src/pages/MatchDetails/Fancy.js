@@ -286,7 +286,7 @@ const Fancy = ({
                         </dt>
                       </dl>
                       {/* )} */}
-                      {(item?.position != "" || item?.position === 0) && !isNaN(Math.abs(item?.position)) && (
+                      {/* {(item?.position != "" || item?.position === 0) && !isNaN(Math.abs(item?.position)) && (
                         <a
                           id="fancyBetBookBtn"
                           href="javascript:void(0)"
@@ -299,7 +299,7 @@ const Fancy = ({
                         >
                           Book
                         </a>
-                      )}
+                      )} */}
                     </dt>
 
                     {item?.odds?.ms == 1 ? (
