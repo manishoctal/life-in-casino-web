@@ -6747,6 +6747,12 @@ h4 .info-icon {
     padding-right: 2.13333vw;
     background-image: url(../images/bg-match-btn-right.png)
 }
+.match-btn .new-btn-refresh{
+    background-image: url(../images/btn-refresh-img.png);
+    width: 40.46667vw;
+    height: 6.46667vw;
+    background-size: 100%;
+}
 
 /* .match-btn .btn-refresh.new-btn-refresh{
     background-image: url(../images/btn-refresh-img.png)!important;
@@ -6781,6 +6787,8 @@ h4 .info-icon {
     .match-btn .btn-refresh {
         padding-right: 1.1994vmax
     }
+
+    
 }
 
 .game-team {
