@@ -230,7 +230,7 @@ function CasinoGames() {
                       </dl> */}
                         <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
                       </a>
-                      <h5>{item?.game_name}</h5>
+                      <h5 style={{'textAlign':'center'}}>{item?.game_name}</h5>
                     </div>
                   );
                 })
