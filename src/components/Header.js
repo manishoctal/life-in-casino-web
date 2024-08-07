@@ -131,31 +131,6 @@ const Header = () => {
               </a>
             </li>
             {/* <li><h6 className="top-logo"></h6></li> */}
-            <li className="li-tv_bet">
-              {location?.pathname?.split("/")[1] == "match-details" && isTv.id !== "" && (
-                <a id="openTV" className="a-open_tv ui-link" href="#" onClick={() => setIsTv({ ...isTv, status: true })} style={{ display: isTv.id == "" ? "none" : "flex" }}>
-                  <img src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"} alt={""} />
-                </a>
-              )}
-              <a
-                id="openBetsBtn"
-                onClick={() => {
-                  setOpenBetsToogle(true);
-                }}
-                className="a-open_bets ui-link"
-                href="javascript:void(0)"
-              >
-                <img src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"} alt={""} />
-                {/* Bets */}
-                {unMatchedBets?.length > 0 && (
-                  <div>
-                    <span class="slip-note"></span>
-                    <span class="slip-note"></span>
-                    <span class="slip-note"></span>
-                  </div>
-                )}
-              </a>
-            </li>
 
             <li className="main-wallet">
               <a
@@ -208,6 +183,32 @@ const Header = () => {
               </a>
               <a className="a-refresh ui-link" id="menuRefresh" href="javascript:void(0)" onClick={() => getCoins()} title="Refresh Main Wallet">
                 <img src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"} alt={""} />
+              </a>
+            </li>
+
+            <li className="li-tv_bet">
+              {location?.pathname?.split("/")[1] == "match-details" && isTv.id !== "" && (
+                <a id="openTV" className="a-open_tv ui-link" href="#" onClick={() => setIsTv({ ...isTv, status: true })} style={{ display: isTv.id == "" ? "none" : "flex" }}>
+                  <img src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"} alt={""} />
+                </a>
+              )}
+              <a
+                id="openBetsBtn"
+                onClick={() => {
+                  setOpenBetsToogle(true);
+                }}
+                className="a-open_bets ui-link"
+                href="javascript:void(0)"
+              >
+                <img src={process.env.REACT_APP_URL + "/assets/images/home/transparent.gif"} alt={""} />
+                {/* Bets */}
+                {unMatchedBets?.length > 0 && (
+                  <div>
+                    <span class="slip-note"></span>
+                    <span class="slip-note"></span>
+                    <span class="slip-note"></span>
+                  </div>
+                )}
               </a>
             </li>
 

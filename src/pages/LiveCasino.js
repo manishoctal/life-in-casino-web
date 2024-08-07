@@ -11,18 +11,11 @@ import obj from "../Utils/helpers";
 function LiveCasino() {
   let { user } = useContext(AuthProvider);
   const launchGame = async (platForm, gameType) => {
-    const { status, data: response_users } = await apiPost(
-      apiPath.doLoginAndLaunchEasyToCasino,
-      { prod: gameType, type: platForm }
-    );
+    const { status, data: response_users } = await apiPost(apiPath.doLoginAndLaunchEasyToCasino, { prod: gameType, type: platForm });
     if (status === 200) {
       if (response_users.status) {
         if (response_users.data.err == 1) {
-          javascript: window.open(
-            response_users.data.url,
-            "_blank",
-            "height=900,width=1200"
-          );
+          javascript: window.open(response_users.data.url, "_blank", "height=900,width=1200");
         } else {
           toast.error("something went wrong");
         }
@@ -33,11 +26,7 @@ function LiveCasino() {
   return (
     <div>
       <div className="promo-viewport">
-        <img
-          src="assets/images/home/kv-betgames-9livegames-m.png"
-          style={{ width: "100%" }}
-          alt=""
-        />
+        <img src="assets/images/home/kv-betgames-9livegames-m.png" style={{ width: "100%" }} alt="" />
       </div>
 
       <div id="page">
@@ -126,13 +115,7 @@ function LiveCasino() {
 
           <div className="support-wrap extend-support">
             <div className="extend-btn">
-              <img
-                src={
-                  process.env.REACT_APP_URL + "assets/images/home/transparent.gif"
-                }
-                title="customer"
-                className="support-customer"
-              />
+              <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="customer" className="support-customer" />
               <a href="#">Customer support1</a>
 
               <a href="#" className="split-line">
@@ -140,13 +123,7 @@ function LiveCasino() {
               </a>
             </div>
             <div className="extend-btn">
-              <img
-                src={
-                  process.env.REACT_APP_URL + "assets/images/home/transparent.gif"
-                }
-                title="WhatsApp"
-                className="support-whatsapp"
-              />
+              <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="WhatsApp" className="support-whatsapp" />
               <a href="#">+91123456789</a>
 
               <a href="#" className="split-line">
@@ -154,13 +131,7 @@ function LiveCasino() {
               </a>
             </div>
             <div className="extend-btn">
-              <img
-                src={
-                  process.env.REACT_APP_URL + "assets/images/home/transparent.gif"
-                }
-                title="Telegram"
-                className="support-telegram"
-              />
+              <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="Telegram" className="support-telegram" />
               <a href="#">PoisaBazz001</a>
 
               <a href="#" className="split-line">
@@ -169,36 +140,15 @@ function LiveCasino() {
             </div>
             <div className="support-social">
               <div className="social-btn">
-                <img
-                  src={
-                    process.env.REACT_APP_URL +
-                    "assets/images/home/transparent.gif"
-                  }
-                  title="Skype"
-                  className="support-skype"
-                />
+                <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="Skype" className="support-skype" />
                 <a href="#">Skype</a>
               </div>
               <div className="social-btn">
-                <img
-                  src={
-                    process.env.REACT_APP_URL +
-                    "assets/images/home/transparent.gif"
-                  }
-                  title="Email"
-                  className="support-mail"
-                />
+                <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="Email" className="support-mail" />
                 <a href="#">Email</a>
               </div>
               <div className="social-btn">
-                <img
-                  src={
-                    process.env.REACT_APP_URL +
-                    "assets/images/home/transparent.gif"
-                  }
-                  title="Instagram"
-                  className="support-ig"
-                />
+                <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} title="Instagram" className="support-ig" />
                 <a href="#" className="ui-link">
                   Instagram
                 </a>
@@ -234,28 +184,14 @@ function LiveCasino() {
           </ul>
 
           <div className="extra-wrap">
-            <div
-              id="powerWrap"
-              className="power-wrap-b"
-              style={{ display: "block" }}
-            >
+            <div id="powerWrap" className="power-wrap-b" style={{ display: "block" }}>
               <span>Powered by</span>
-              <img
-                src={
-                  process.env.REACT_APP_URL + "assets/images/home/transparent.gif"
-                }
-              />
+              <img src={process.env.REACT_APP_URL + "assets/images/home/transparent.gif"} />
             </div>
 
             <div className="appdl-link-android" style={{ display: "block" }}>
               <a href="#">
-                <img
-                  src={
-                    process.env.REACT_APP_URL +
-                    "assets/images/home/btn-appdl-android.png"
-                  }
-                  alt=""
-                />
+                <img src={process.env.REACT_APP_URL + "assets/images/home/btn-appdl-android.png"} alt="" />
               </a>
               <p>v1.11 - 2022-03-23 - 3.1MB</p>
             </div>
