@@ -8,10 +8,8 @@ import apiPath from "../Utils/apiPath";
 import obj from "../Utils/helpers";
 import { toast } from "wc-toast";
 import CasinoGamesHome from "./CasinoGamesHome";
-import TopCasinoGames from './TopCasinoGames'
+import TopCasinoGames from "./TopCasinoGames";
 import Slider from "react-slick";
-
-
 
 function Home() {
   var settings = {
@@ -22,15 +20,14 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    loop: true
+    loop: true,
   };
 
   const [inplayCountData, setInplayCountData] = useState({});
   const [vendors, setVendors] = useState();
   const [data, setData] = useState({});
   const navigate = useNavigate();
-  let { isLoged, setIsLoged, setCasinoModel, setCasinoObj, user, setVendor, setLoader, user_coins, setCasinoGameUrl, setAnnouncmentToogle } =
-    useContext(AuthProvider);
+  let { isLoged, setIsLoged, setCasinoModel, setCasinoObj, user, setVendor, setLoader, user_coins, setCasinoGameUrl, setAnnouncmentToogle } = useContext(AuthProvider);
   const inPlayCount = async () => {
     const { status, data: response_users } = await apiGet(apiPath.inPlayCount);
     if (status === 200) {
@@ -85,7 +82,7 @@ function Home() {
           setData(response_users.results);
         }
       }
-    } catch (err) { }
+    } catch (err) {}
   };
 
   // useEffect(() => {
@@ -121,24 +118,21 @@ function Home() {
 
   return (
     <div>
-
       <Slider {...settings} className="homeSlider">
-        <div >
+        <div>
           <img src="/assets/images/home/Banner1.png" style={{ width: "100%" }} alt="" />
         </div>
 
-        <div >
+        <div>
           <img src="/assets/images/home/Banner2.png" style={{ width: "100%" }} alt="" />
         </div>
 
-        <div >
+        <div>
           <img src="/assets/images/home/Banner3.png" style={{ width: "100%" }} alt="" />
         </div>
-
       </Slider>
 
-
-      <div id="headerMain2" className="marquee-box" style={{ display: "flex" }}>
+      {/* <div id="headerMain2" className="marquee-box" style={{ display: "flex" }}>
         <h4></h4>
         <div
           class="marquee"
@@ -160,7 +154,7 @@ function Home() {
             </div>
           </marquee>
         </div>
-      </div>
+      </div> */}
       <div id="page">
         <div className="mian-wrap">
           {/* <TopCasinoGames/> */}
@@ -226,13 +220,14 @@ function Home() {
             </div>
           </div> */}
 
-
           <div className="support-wrap extend-supportLink">
             {/* {data?.emailShowing == "true" && data?.emailContent != "" && (
               <a href={`mailto:${data?.emailContent}`}><img src="assets/images/home/mail.svg" /></a>
             )} */}
             {data?.telegramShowing == "true" && data?.telegramContent != "" && (
-              <a href={`https://web.telegram.org/`+data?.telegramContent} target="_blank"><img src="assets/images/home/twitter.svg" /></a>
+              <a href={`https://web.telegram.org/` + data?.telegramContent} target="_blank">
+                <img src="assets/images/home/twitter.svg" />
+              </a>
             )}
             {/* <a href="#"><img src="assets/images/home/twitter.svg" /></a> */}
             {data?.whatsappShowing == "true" && data?.whatsappContent != "" && (
@@ -242,10 +237,14 @@ function Home() {
             )}
             {/* <a href="#"><img src="assets/images/home/skypeNew.svg" /></a> */}
             {data?.instagramShowing == "true" && data?.instagramContent != "" && (
-              <a href={data?.instagramContent} target="_blank"><img src="assets/images/home/instagram.svg" /></a>
+              <a href={data?.instagramContent} target="_blank">
+                <img src="assets/images/home/instagram.svg" />
+              </a>
             )}
             {data?.facebookShowing == "true" && data?.facebookContent != "" && (
-              <a href={data?.facebookContent} target="_blank"><img src="assets/images/home/facebook.svg" /></a>
+              <a href={data?.facebookContent} target="_blank">
+                <img src="assets/images/home/facebook.svg" />
+              </a>
             )}
           </div>
 
