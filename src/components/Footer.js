@@ -67,47 +67,35 @@ y
             </a>
           </li> */}
 
-          <li id="home" className={window.location.pathname == '/' ? "select main-nav" : ""}>
+          <li id="home" className={window.location.pathname == "/" ? "select main-nav" : ""}>
             <Link to="/" neua="Home" className="ui-link">
-              {window.location.pathname == '/' ? <img
-                className="icon-home2"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_active.png"}
-                alt=""
-              /> : <img
-                className="icon-home2"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_gray.png"}
-                alt=""
-              />}
+              {window.location.pathname == "/" ? (
+                <img className="icon-home2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_active.png"} alt="" />
+              ) : (
+                <img className="icon-home2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/home_gray.png"} alt="" />
+              )}
               Home
             </Link>
           </li>
 
-          <li id="casino" className={window.location.pathname == '/casino-games' ? "select main-nav" : ""}>
+          <li id="casino" className={window.location.pathname == "/casino-games" ? "select main-nav" : ""}>
             <Link to="/casino-games" neua="Sports" className="ui-link">
-              {window.location.pathname == '/casino-games' ? <img
-                className=""
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_active.png"}
-                alt=""
-              /> : <img
-                className=""
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_gray.png"}
-                alt=""
-              />}
+              {window.location.pathname == "/casino-games" ? (
+                <img className="" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_active.png"} alt="" />
+              ) : (
+                <img className="" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/casino_gray.png"} alt="" />
+              )}
               Casino
             </Link>
           </li>
 
-          <li id="sports" className={window.location.pathname == '/sports' ? "select main-nav" : ""}>
+          <li id="sports" className={window.location.pathname == "/sports" ? "select main-nav" : ""}>
             <Link to="/sports" neua="Sports" className="ui-link">
-              {window.location.pathname == '/sports' ? <img
-                className="icon-sports2"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sport_active.png"}
-                alt=""
-              /> : <img
-                className="icon-home2"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_gray.png"}
-                alt=""
-              />}
+              {window.location.pathname == "/sports" ? (
+                <img className="icon-sports2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sport_active.png"} alt="" />
+              ) : (
+                <img className="icon-home2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/sports_gray.png"} alt="" />
+              )}
               Sports
             </Link>
           </li>
@@ -125,41 +113,29 @@ y
 
           <li id="support">
             <Link to={"http://Wa.me/+918147049979"} target="_blank" neua="Multi Markets" className="ui-link">
-              <img
-                className="icon-pin2"
-                src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/whatsup_gray.png"}
-                alt=""
-              />
+              <img className="icon-pin2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/whatsup_gray.png"} alt="" />
               Support
             </Link>
           </li>
-          <li id="account" className={window.location.pathname == '/profile' ? "select main-nav" : ""}>
+          <li id="account" className={window.location.pathname == "/profile" ? "select main-nav" : ""}>
             <Link to={user ? "/profile" : "/login"}>
-              {isEmpty(user) ?
+              {isEmpty(user) ? (
                 <>
-                  {window.location.pathname == '/login' ? <img
-                    className="icon-account2"
-                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_active.png"}
-                    alt=""
-                  /> : <img
-                    className="icon-account2"
-                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_gray.png"}
-                    alt=""
-                  />
-                  }
-                </> : <>
-                  {window.location.pathname == '/profile' ? <img
-                    className="icon-account2"
-                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_active.png"}
-                    alt=""
-                  /> : <img
-                    className="icon-account2"
-                    src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_gray.png"}
-                    alt=""
-                  />
-                  }
+                  {window.location.pathname == "/login" ? (
+                    <img className="icon-account2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_active.png"} alt="" />
+                  ) : (
+                    <img className="icon-account2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/login_gray.png"} alt="" />
+                  )}
                 </>
-              }
+              ) : (
+                <>
+                  {window.location.pathname == "/profile" ? (
+                    <img className="icon-account2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_active.png"} alt="" />
+                  ) : (
+                    <img className="icon-account2" src={process.env.REACT_APP_URL + "/assets/images/bottom_icon/account_gray.png"} alt="" />
+                  )}
+                </>
+              )}
               {!isEmpty(user) ? "Account" : "Login"}
             </Link>
           </li>

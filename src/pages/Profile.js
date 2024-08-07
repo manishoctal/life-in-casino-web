@@ -5,7 +5,7 @@ import AuthProvider from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 function Profile() {
-  let { logoutUser, user } = useContext(AuthProvider);
+  let { logoutUser, user, setSettingToogle } = useContext(AuthProvider);
   let token = localStorage.getItem("token") || "";
   // console.log(`${process.env.REACT_APP_URL}my-profile/mobile/${token}`,"=========")
   //   let temp =
@@ -21,9 +21,7 @@ function Profile() {
         <div className="path-wrap profileHead">
           <p className="account-id">
             <span>{user ? user?.user?.username : ""}</span>
-            <span className="time-zone">
-              {user ? user?.user?.timeZoneOffset : ""}
-            </span>
+            <span className="time-zone">{user ? user?.user?.timeZoneOffset : ""}</span>
           </p>
 
           <Link
@@ -42,21 +40,13 @@ function Profile() {
           <div className="dubbleGrid">
             {process.env.REACT_APP_ENABLE_PAYMENT == "true" && (
               <>
-                <Link
-                  to={"/recharge"}
-                  state={{ from: "deposit" }}
-                  className="whiteWrapper d-flex align-items-center text-white bg-success"
-                >
+                <Link to={"/recharge"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center text-white bg-success">
                   <span className="iconLeft">
                     <img src="/assets/images/profileIcon/DepositMoney.png" />
                   </span>
                   Deposit Money
                 </Link>
-                <Link
-                  to={"/recharge"}
-                  state={{ from: "withdraw" }}
-                  className="whiteWrapper d-flex align-items-center text-white bg-danger"
-                >
+                <Link to={"/recharge"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center text-white bg-danger">
                   <span className="iconLeft">
                     <img src="/assets/images/profileIcon/WithdrawMoney.png" />
                   </span>
@@ -67,78 +57,73 @@ function Profile() {
           </div>
 
           <div className="whiteWrapperBlock">
-             <Link
-                to={`/balance`}
-               className="whiteWrapper d-flex align-items-center">
+            <Link to={`/balance`} className="whiteWrapper d-flex align-items-center">
               <span className="iconLeft">
                 <img src="/assets/images/profileIcon/BalanceOverview.png" />
               </span>
-                Balance Overview
-              </Link>
+              Balance Overview
+            </Link>
           </div>
 
           <div className="whiteWrapperBlock">
-              <Link
-                to={`/mybets`} className="whiteWrapper d-flex align-items-center">
+            <Link to={`/mybets`} className="whiteWrapper d-flex align-items-center">
               <span className="iconLeft">
                 <img src="/assets/images/profileIcon/MyBets.png" />
               </span>
-             
-                My Bets
-              </Link>
-        
-              <Link
-                to={`/betshistory`} className="whiteWrapper d-flex align-items-center">
+              My Bets
+            </Link>
+
+            <Link to={`/betshistory`} className="whiteWrapper d-flex align-items-center">
               <span className="iconLeft">
                 <img src="/assets/images/profileIcon/BetsHistory.png" />
               </span>
-                Bets History
-              </Link>
+              Bets History
+            </Link>
           </div>
 
           <div className="whiteWrapperBlock">
-            <Link
-                to={`/profit_loss`} className="whiteWrapper d-flex align-items-center">
+            <Link to={`/profit_loss`} className="whiteWrapper d-flex align-items-center">
               <span className="iconLeft">
                 <img src="/assets/images/profileIcon/Profit&Loss.png" />
               </span>
-                Profit &amp; Loss
+              Profit &amp; Loss
             </Link>
 
-              <Link
-                to={`/account-statement`} className="whiteWrapper d-flex align-items-center">
+            <Link to={`/account-statement`} className="whiteWrapper d-flex align-items-center">
               <span className="iconLeft">
                 <img src="/assets/images/profileIcon/AccountStatement.png" />
               </span>
-               
-                Account Statement
-              </Link>
+              Account Statement
+            </Link>
           </div>
           {process.env.REACT_APP_ENABLE_PAYMENT == "true" && (
             <>
               <div className="whiteWrapperBlock">
-              <Link to={"/withdraw-requests"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center">
+                <Link to={"/withdraw-requests"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center">
                   <span className="iconLeft">
-                    <img src="/assets/images/profileIcon/MyWithdrawRequests.png" />
+                    <img src="/assets/images/profileIcon/withdraw.png" />
                   </span>
-                    My Withdraw Requests
-                  </Link>
+                  My Withdraw Requests
+                </Link>
 
-                  <Link to={"/deposit-requests"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center">
-                  <span className="iconLeft">
-                    <img src="/assets/images/profileIcon/MyDepositRequests.png" />
+                <Link to={"/deposit-requests"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center">
+                  <span className="iconLeft ml-2">
+                    <img src="/assets/images/profileIcon/Deposit.png" />
                   </span>
-                    My Deposit Requests
-                  </Link>
+                  My Deposit Requests
+                </Link>
+              </div>
+              <div className="whiteWrapperBlock">
+                <Link onClick={() => setSettingToogle(true)} className="whiteWrapper d-flex align-items-center" to="#" title="Setting">
+                  <span className="iconLeft ml-2">
+                    <img src="/assets/images/profileIcon/chip settings.png" />
+                  </span>
+                  Setting
+                </Link>
               </div>
             </>
           )}
-          <Button
-            style={{ width: "100%" }}
-            onClick={() => logoutUser()}
-            id="logout"
-            className="logout"
-          >
+          <Button style={{ width: "100%" }} onClick={() => logoutUser()} id="logout" className="logout">
             LOGOUT
           </Button>
         </div>
