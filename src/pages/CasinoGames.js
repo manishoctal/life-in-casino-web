@@ -36,7 +36,7 @@ function CasinoGames() {
           slidesToShow: 5,
           slidesToScroll: 5,
           initialSlide: 5,
-        }
+        },
       },
       {
         breakpoint: 600, // Screen width at which settings will apply
@@ -44,17 +44,17 @@ function CasinoGames() {
           slidesToShow: 3,
           slidesToScroll: 3,
           initialSlide: 3,
-        }
+        },
       },
       {
         breakpoint: 480, // Screen width at which settings will apply
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          variableWidth: true
-        }
-      }
-    ]
+          variableWidth: true,
+        },
+      },
+    ],
   };
 
   const handlePageClick = (event) => {
@@ -170,83 +170,79 @@ function CasinoGames() {
   return (
     <div>
       <div className="ProviderGameInnerCasino">
-          <Slider {...settings} className="GameSlider"> 
-          <div>
-           
-          </div>
-            {vendors?.length > 0
-              ? vendors.map((item, index) => {
-                  if (item != "") {
-                    return (
-                      <div key={index} className="gameCTG">
-                          <a
-                            className={item.name == vendor ? "entrance active" : "entrance"}
-                            href="javascript:void(0)"
-                            onClick={() => {
-                              if (item.name == "Evolution Gaming") {
-                                setVendor("DC");
-                              } else {
-                                setVendor(item.name);
-                              }
-                            }}
-                          >
-                            {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
-                            <dt style={{ fontSize: '14px', marginBottom: "0" }}>
-                              {item?.labelName}
-                            </dt>
-
-                          </a>
-                        </div>
-                    );
-                  }
-                })
-              : ""} 
-          </Slider>
+        <Slider {...settings} className="GameSlider">
+          <div></div>
+          {vendors?.length > 0
+            ? vendors.map((item, index) => {
+                if (item != "") {
+                  return (
+                    <div key={index} className="gameCTG">
+                      <a
+                        className={item.name == vendor ? "entrance active" : "entrance"}
+                        href="javascript:void(0)"
+                        onClick={() => {
+                          if (item.name == "Evolution Gaming") {
+                            setVendor("DC");
+                          } else {
+                            setVendor(item.name);
+                          }
+                        }}
+                      >
+                        {/* <span><img src={item?.name == vendor ? `/assets/images/casino/${item?.name?.toUpperCase()}_gold.png` : `/assets/images/casino/${item?.name?.toUpperCase()}_gray.png`} alt=""/></span> */}
+                        <dt style={{ fontSize: "14px", marginBottom: "0" }}>{item?.labelName}</dt>
+                      </a>
+                    </div>
+                  );
+                }
+              })
+            : ""}
+        </Slider>
       </div>
       <div>
-        <a
-            className="a-search innerSearch"
-            onClick={() => setSearchToogleCasino(true)}
-            href="javascript:void(0)"
-          >
-            Search
-          </a>
+        <a className="a-search innerSearch" onClick={() => setSearchToogleCasino(true)} href="javascript:void(0)">
+          Search
+        </a>
       </div>
 
       <div id="page">
         <div className="mian-wrap">
-          <div className="gamehall innerPageList">
+          <div className="gamehall innerPageList2 homepageList">
             {games.length > 0
               ? games.map((item, index) => {
                   return (
-                    <a
-                      key={index}
-                      className="entrance-half"
-                      href="javascript:void(0)"
-                      onClick={() => {
-                        if (!isEmpty(user)) {
-                          casinoGameURL(item?.game_id, item?.provider_name);
-                        } else {
-                          navigate("/login");
-                        }
-                      }}
-                      neua="Blackjack Banner"
-                    >
-                      {/* <dl className="entrance-title">
+                    <div className="CardsThumbnail">
+                      <a
+                        key={index}
+                        className="entrance-half"
+                        href="javascript:void(0)"
+                        onClick={() => {
+                          if (!isEmpty(user)) {
+                            casinoGameURL(item?.game_id, item?.provider_name);
+                          } else {
+                            navigate("/login");
+                          }
+                        }}
+                        neua="Blackjack Banner"
+                      >
+                        {/* <dl className="entrance-title">
                         <dt>{item.game_name}</dt>
-                        <dd>Play Now</dd> 
+                        <dd>Play Now</dd>
                       </dl> */}
-                      <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
-                    </a>
+                        <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
+                      </a>
+                      <h5>{item?.game_name}</h5>
+                    </div>
                   );
                 })
               : ""}
           </div>
-          {showLoadMore && <div style={{ display: "flex" }}>
-                        <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>
-                            {loader ? "Loading..." : "Load more..."}
-                        </Button>
-                    </div>}
+          {showLoadMore && (
+            <div style={{ display: "flex" }}>
+              <Button type="submit" className="loadmore-btn" onClick={() => setPageSize(pageSize + 20)}>
+                {loader ? "Loading..." : "Load more..."}
+              </Button>
+            </div>
+          )}
           {/* <div className="bottom-pagination">
             <ReactPaginate
               breakLabel="..."
