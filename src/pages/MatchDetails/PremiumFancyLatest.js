@@ -539,7 +539,7 @@ const PremiumFancyLatest = ({
         </>
     ) : (
         <div id="noGameWrap" class="bets-wrap">
-            <p class="no-game">No Premium Fancy Found</p>
+            <p class="no-game">Coming Soon...</p>
         </div>
     );
 };

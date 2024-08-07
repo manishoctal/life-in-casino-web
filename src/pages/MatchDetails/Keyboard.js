@@ -114,20 +114,24 @@ const Keyboard = ({
               <p className="dynamic-min-bet">&nbsp;</p>
               <div
                 id="inputOdds"
-                className={
-                  betSelectionObj?.betType == "betFair"
-                    ? "input-num"
-                    : "input-num disable"
-                }
+                className={"input-num disable"}
+                // className={
+                //   betSelectionObj?.betType == "betFair"
+                //     ? "input-num"
+                //     : "input-num disable"
+                // }
               >
                 <a
                   id="oddsDown"
                   disabled={betSelectionObj?.betType == "betFair" ? false : true}
                   className="icon-minus"
                   style={{
-                    display:
-                      betSelectionObj?.betType !== "betFair" ? "none" : "flex",
+                    display:"none"
                   }}
+                  // style={{
+                  //   display:
+                  //     betSelectionObj?.betType !== "betFair" ? "none" : "flex",
+                  // }}
                   onClick={() => {
                     if (betSelectionObj?.betType == "betFair") {
                       setBetSelectionObj({
@@ -160,14 +164,15 @@ const Keyboard = ({
                       : ""}
                   {betSelectionObj?.betType == "betFair" && (
                     <input
-                      onFocus={false}
+                      // onFocus={false}
                       type="number"
                       value={betSelectionObj?.oddsSelect}
                       placeholder="Odds"
                       inputmode="none"
-                      disabled={
-                        betSelectionObj?.betType == "betFair" ? false : true
-                      }
+                      disabled={true}
+                      // disabled={
+                      //   betSelectionObj?.betType == "betFair" ? false : true
+                      // }
                       onChange={(e) => {
                         setBetSelectionObj({
                           ...betSelectionObj,
@@ -196,9 +201,12 @@ const Keyboard = ({
                   id="oddsUp"
                   className="icon-plus"
                   style={{
-                    display:
-                      betSelectionObj?.betType !== "betFair" ? "none" : "flex",
+                    display:"none"
                   }}
+                  // style={{
+                  //   display:
+                  //     betSelectionObj?.betType !== "betFair" ? "none" : "flex",
+                  // }}
                   href="javascript:void(0)"
                   disabled={betSelectionObj?.betType == "betFair" ? false : true}
                   onClick={() => {
@@ -255,7 +263,7 @@ const Keyboard = ({
                   }
                 >
                   <input
-                    onFocus={true}
+                    // onFocus={true}
                     type="number"
                     value={betSelectionObj?.bidPrice}
                     placeholder="Price"

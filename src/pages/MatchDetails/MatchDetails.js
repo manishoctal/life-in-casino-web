@@ -150,7 +150,7 @@ const MatchDetails = ({
         <dl id="betsHead" className="bets-selections-head">
           <dt>
             <a
-              onClick={() => setMarketDepth(true)}
+              // onClick={() => setMarketDepth(true)}
               className="a-depth"
               href="#"
               id="marketDepthBtn"
