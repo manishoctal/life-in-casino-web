@@ -120,15 +120,15 @@ function Home() {
     <div>
       <Slider {...settings} className="homeSlider">
         <div>
-          <img src="/assets/images/home/Banner1.png" style={{ width: "100%" }} alt="" />
+          <img src="/assets/images/home/BannerPicture3.png" style={{ width: "100%" }} alt="" />
         </div>
 
         <div>
-          <img src="/assets/images/home/Banner2.png" style={{ width: "100%" }} alt="" />
+          <img src="/assets/images/home/BannerPicture2.png" style={{ width: "100%" }} alt="" />
         </div>
 
         <div>
-          <img src="/assets/images/home/Banner3.png" style={{ width: "100%" }} alt="" />
+          <img src="/assets/images/home/BannerPicture1.png" style={{ width: "100%" }} alt="" />
         </div>
       </Slider>
 
