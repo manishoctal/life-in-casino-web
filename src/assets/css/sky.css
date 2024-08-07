@@ -19409,10 +19409,10 @@ button.close-button {
   height: 9rem;
 }
 
-.innerPageList .entrance-half img{
-    height: 100%!important;
-    width: 100%!important;
-    object-fit: cover!important;
+.innerPageList .entrance-half img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 .innerSearch {
@@ -19634,7 +19634,7 @@ dt.TopGameTabs {
 
 .iconLeft {
   vertical-align: middle;
-  margin-right: 1vw;
+  margin-right: 3vw;
 }
 
 .btn.profileBtn {

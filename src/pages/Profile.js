@@ -101,14 +101,14 @@ function Profile() {
               <div className="whiteWrapperBlock">
                 <Link to={"/withdraw-requests"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center">
                   <span className="iconLeft">
-                    <img src="/assets/images/profileIcon/MyWithdrawRequests.png" />
+                    <img src="/assets/images/profileIcon/withdraw.png" />
                   </span>
                   My Withdraw Requests
                 </Link>
 
                 <Link to={"/deposit-requests"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center">
-                  <span className="iconLeft">
-                    <img src="/assets/images/profileIcon/MyDepositRequests.png" />
+                  <span className="iconLeft ml-2">
+                    <img src="/assets/images/profileIcon/Deposit.png" />
                   </span>
                   My Deposit Requests
                 </Link>
