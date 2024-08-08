@@ -41,15 +41,15 @@ function Profile() {
             {process.env.REACT_APP_ENABLE_PAYMENT == "true" && (
               <>
                 <Link to={"/recharge"} state={{ from: "deposit" }} className="whiteWrapper d-flex align-items-center text-white bg-success">
-                  <span className="iconLeft">
+                  {/* <span className="iconLeft">
                     <img src="/assets/images/profileIcon/DepositMoney.png" />
-                  </span>
+                  </span> */}
                   Deposit Money
                 </Link>
                 <Link to={"/recharge"} state={{ from: "withdraw" }} className="whiteWrapper d-flex align-items-center text-white bg-danger">
-                  <span className="iconLeft">
+                  {/* <span className="iconLeft">
                     <img src="/assets/images/profileIcon/WithdrawMoney.png" />
-                  </span>
+                  </span> */}
                   Withdraw Money
                 </Link>
               </>

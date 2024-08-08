@@ -199,10 +199,10 @@ function CasinoGames() {
         </Slider>
       </div>
       <div className="casinoSearchRow">
-        <h2>Search your favorite games</h2>
-        <a className="a-search innerSearch" onClick={() => setSearchToogleCasino(true)} href="javascript:void(0)">
+        <a className="a-search innerSearch " onClick={() => setSearchToogleCasino(true)} href="javascript:void(0)">
           Search
         </a>
+        <h2>Search your favorite games</h2>
       </div>
 
       <div id="page">

@@ -3759,11 +3759,12 @@ header li:last-of-type {
 }
 
 header li.main-wallet {
-  border: .26667vw solid #0000004d;
+  border: 0.26667vw solid #0000004d;
   border-radius: 1.06667vw;
   flex: 0 0 auto;
   font-size: 2.66667vw;
   margin-left: auto;
+  max-width: 36vw;
 }
 
 header li.main-wallet:hover,
@@ -3801,7 +3802,8 @@ header li.main-wallet .a-wallet ul {
   /* background: var(--theme2);
     border-radius: 10px; */
 }
-.select.main-nav .ui-link,.select.main-nav a {
+.select.main-nav .ui-link,
+.select.main-nav a {
   color: #fdcb2a;
 }
 
@@ -4931,6 +4933,7 @@ nav .main-nav {
 nav ul {
   position: relative;
   z-index: 2;
+  justify-content: space-between;
 }
 
 /* nav .main-nav a{
@@ -18283,11 +18286,11 @@ nav .game-nav a {
 }
 
 nav ul a {
-  width: 16.5555vw;
+  width: 17.5555vw;
 }
 
 nav ul li {
-  margin: 0 1.55vw;
+  /* margin: 0 0.5vw; */
 }
 
 .lobby {
@@ -19292,7 +19295,7 @@ button.close-button {
 }
 
 .casinoSearchRow h2 {
-  font-size: 5vw;
+  font-size: 4vw;
 }
 
 /* new changes */
@@ -19461,7 +19464,7 @@ button.close-button {
   position: relative;
   background: #000;
   display: block;
-  margin-left: auto;
+  /* margin-left: auto; */
   margin-right: 0;
   background: transparent;
 }
@@ -19656,14 +19659,17 @@ dt.TopGameTabs {
 }
 
 .dubbleGrid .whiteWrapper {
-  flex: 1;
+  flex: 1 1;
   max-width: 100%;
   border-radius: 2vw;
   overflow: hidden;
   box-shadow: 0 1vw 1vh rgba(0, 0, 0, 0.06);
-  font-size: 3.4vw;
-  padding: 1.455vw 4vw;
+  font-size: 4vw;
+  padding: 2.455vw 4vw;
   border-radius: 100px;
+  justify-content: center;
+  font-weight: bold;
+  /* color: #000; */
 }
 
 .whiteWrapperBlock {
