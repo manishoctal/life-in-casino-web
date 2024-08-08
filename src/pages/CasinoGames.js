@@ -202,7 +202,7 @@ function CasinoGames() {
         <a className="a-search innerSearch " onClick={() => setSearchToogleCasino(true)} href="javascript:void(0)">
           Search
         </a>
-        <h2>Search your favorite games</h2>
+        <h2>Search your favourite games</h2>
       </div>
 
       <div id="page">
