@@ -198,7 +198,8 @@ function CasinoGames() {
             : ""}
         </Slider>
       </div>
-      <div>
+      <div className="casinoSearchRow">
+        <h2>Search your favorite games</h2>
         <a className="a-search innerSearch" onClick={() => setSearchToogleCasino(true)} href="javascript:void(0)">
           Search
         </a>
@@ -230,7 +231,7 @@ function CasinoGames() {
                       </dl> */}
                         <img style={{ height: "100%" }} src={item?.url_thumb} alt="" />
                       </a>
-                      <h5 style={{'textAlign':'center'}}>{item?.game_name}</h5>
+                      <h5 style={{ textAlign: "center" }}>{item?.game_name}</h5>
                     </div>
                   );
                 })

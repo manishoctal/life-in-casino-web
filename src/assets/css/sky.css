@@ -3800,7 +3800,7 @@ header li.main-wallet .a-wallet ul {
   /* background: var(--theme2);
     border-radius: 10px; */
 }
-.select.main-nav .ui-link {
+.select.main-nav .ui-link,.select.main-nav a {
   color: #fdcb2a;
 }
 
@@ -19266,6 +19266,7 @@ button.close-button {
   /* background:linear-gradient(-180deg, var(--themeBlack) 0%, var(--themedark) 100%); */
   background: #fdcb2a;
   /* box-shadow:inset 0 .26667vw 0 0 rgba(255, 255, 255, 0.5); */
+  border: 0.26667vw solid #fdcb2a;
 }
 
 /* .signUpBtn:before {
@@ -19281,6 +19282,16 @@ button.close-button {
 .login_main {
   position: relative;
   z-index: 1;
+}
+
+.casinoSearchRow {
+  display: flex;
+  align-items: center;
+  padding: 0 1.6vw;
+}
+
+.casinoSearchRow h2 {
+  font-size: 5vw;
 }
 
 /* new changes */
@@ -19634,7 +19645,7 @@ dt.TopGameTabs {
   display: flex;
   width: calc(100% - 0vw);
   margin: 1.5vh 0;
-  gap: 5vw;
+  gap: 3vw;
 }
 
 .whiteWrapper {
@@ -19649,6 +19660,9 @@ dt.TopGameTabs {
   border-radius: 2vw;
   overflow: hidden;
   box-shadow: 0 1vw 1vh rgba(0, 0, 0, 0.06);
+  font-size: 3.4vw;
+  padding: 1.455vw 4vw;
+  border-radius: 100px;
 }
 
 .whiteWrapperBlock {
@@ -19716,4 +19730,8 @@ dt.TopGameTabs {
 .ProviderGameInnerCasino .slick-prev,
 .ProviderGameInnerCasino .slick-next {
   display: none !important;
+}
+
+.bottom-navigation-menu li a {
+  font-weight: 700 !important;
 }

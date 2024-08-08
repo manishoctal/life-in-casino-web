@@ -118,7 +118,7 @@ function Profile() {
                   <span className="iconLeft ml-2">
                     <img src="/assets/images/profileIcon/chip settings.png" />
                   </span>
-                  Setting
+                  Chip Setting
                 </Link>
               </div>
             </>

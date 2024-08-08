@@ -28,15 +28,14 @@ function CasinoGames() {
     dots: false,
     infinite: false,
     centerMode: false,
-    navigator:false,
+    navigator: false,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll:2,
+    slidesToScroll: 2,
     arrows: true,
   };
 
   const handlePageClick = (event) => {
-    
     setSearchParams((prevState) => {
       return {
         ...prevState,
@@ -143,81 +142,62 @@ function CasinoGames() {
   };
 
   useEffect(() => {
-    
     casinoGamesList(vendor);
   }, [vendor, searchKey, search_params, pageSize]);
 
-
-
-
-
   const getTopCasinoGames = async () => {
-
-    let path = apiPath.getTopCasinoGames
+    let path = apiPath.getTopCasinoGames;
     try {
-        const response = await apiGet(path)
-        if (response && response?.data?.success) {
-          setVendors(response?.data?.results);
-
-        } else {
-            toast.error(response?.message || 'Something went wrong', {
-                className: 'bg-danger theme-color'
-            })
-        }
+      const response = await apiGet(path);
+      if (response && response?.data?.success) {
+        setVendors(response?.data?.results);
+      } else {
+        toast.error(response?.message || "Something went wrong", {
+          className: "bg-danger theme-color",
+        });
+      }
     } catch (err) {
-        toast.error(err?.message || 'Something went wrong', {
-            className: 'bg-danger theme-color'
-        })
+      toast.error(err?.message || "Something went wrong", {
+        className: "bg-danger theme-color",
+      });
     }
-}
-
-
-
-
-
-
+  };
 
   useEffect(() => {
     // casinoVenders();
-    getTopCasinoGames()
+    getTopCasinoGames();
   }, []);
   return (
     <div className="TopGameWrap">
-       <h2 className="sectionHead">Top Games</h2>
+      <h2 className="sectionHead">Top Games</h2>
 
-      <Slider {...settings} className="GameSlider topGameSlider2" >   
-      {vendors?.length > 0
-        ? vendors.map((item, index) => {
-            if (item != "") {
-              return (
-              
-                <div className="gameCTG topGameImage">
-                <a
-                  key={index}
-                  className={item.game_name == vendor ? "entrance active" : "entrance"}
-                  href="javascript:void(0)"
-                  onClick={() => {
-
-                    if (!isEmpty(user)) {
-                      casinoGameURL(item?.game_id, item?.provider_name);
-                    } else {
-                      navigate("/login");
-                    }
-                  }} 
+      <Slider {...settings} className="GameSlider topGameSlider2">
+        {vendors?.length > 0
+          ? vendors.map((item, index) => {
+              if (item != "") {
+                return (
+                  <div className="gameCTG topGameImage">
+                    <a
+                      key={index}
+                      className={item.game_name == vendor ? "entrance active" : "entrance"}
+                      href="javascript:void(0)"
+                      onClick={() => {
+                        if (!isEmpty(user)) {
+                          casinoGameURL(item?.game_id, item?.provider_name);
+                        } else {
+                          navigate("/login");
+                        }
+                      }}
                     >
-                   {/* <span><img src={item?.url_thumb} alt=""/></span> */}
-                  <dt className="TopGameTabs">{item?.game_name}</dt>
-                 
-                </a>
-                </div>
-              );
-            }
-            
-          })
-          
-        : ""}
-        </Slider>
-     
+                      {/* <span><img src={item?.url_thumb} alt=""/></span> */}
+                      <dt className="TopGameTabs text-bold">{item?.game_name}</dt>
+                    </a>
+                  </div>
+                );
+              }
+            })
+          : ""}
+      </Slider>
     </div>
   );
 }
