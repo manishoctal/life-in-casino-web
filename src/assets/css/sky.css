@@ -3759,10 +3759,11 @@ header li:last-of-type {
 }
 
 header li.main-wallet {
-  flex: 1;
-  font-size: 2.66667vw;
-  border: 0.26667vw solid rgba(0, 0, 0, 0.3);
+  border: .26667vw solid #0000004d;
   border-radius: 1.06667vw;
+  flex: 0 0 auto;
+  font-size: 2.66667vw;
+  margin-left: auto;
 }
 
 header li.main-wallet:hover,
