@@ -70,7 +70,6 @@ img {
   width: 28.8vw;
 }
 
-
 .brand_name img {
   width: 10.8vw;
 }
@@ -177,7 +176,6 @@ img {
   border-left: 1px solid rgba(0, 0, 0, 0.5);
   padding-left: 10px;
 }
-
 
 .support-social img {
   width: 6vw;
@@ -286,7 +284,6 @@ img {
   margin: 20px auto;
   padding: 0 2.5vw;
   max-width: 680px;
-
 }
 
 .extend-btn img {
@@ -356,7 +353,6 @@ img {
   max-height: 5vw;
 }
 
-
 .extra-wrap {
   padding: 15px;
   justify-content: center;
@@ -397,7 +393,7 @@ img {
 
 .on_live dd span {
   color: #333333;
-  background: #FFFFFF;
+  background: #ffffff;
   text-align: center;
   border-radius: 0.53333vw;
   min-width: 3.73333vw;
@@ -431,7 +427,6 @@ img {
 
 /* footer */
 
-
 .bottom_footer {
   position: fixed;
   bottom: 0;
@@ -447,7 +442,7 @@ img {
   top: -4.5vw;
   width: 100%;
   height: 4.53333vw;
-  background-image: url('../images/home-shape.svg');
+  background-image: url("../images/home-shape.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   pointer-events: none;
@@ -459,17 +454,14 @@ img {
   background: linear-gradient(-180deg, #32617f 20%, #1f4258 91%);
 }
 
-
-
 .bottom_footer .main-nav.active:before {
-  background-image: url('../images/home-active-shape.svg');
+  background-image: url("../images/home-active-shape.svg");
 }
 
 .bottom_footer ul {
   justify-content: space-between;
   margin: 0 auto 0 auto;
   max-width: 100vw;
-
 }
 
 .bottom_footer ul li {
@@ -531,76 +523,72 @@ img {
   grid-column: span 1;
 }
 
-
-
 /* login-page */
 
-
 .login-head {
-	position: relative;
-	height: 74.66667vw;
-	background-size: 100% 100%;
-	margin-bottom: 12vw
+  position: relative;
+  height: 74.66667vw;
+  background-size: 100% 100%;
+  margin-bottom: 12vw;
 }
 
 .login-head h1 {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%)
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-head .betfair-wrap {
-	position: absolute;
-	left: 50%;
-	bottom: 4vw;
-	width: 26.66667vw;
-	margin-left: -13.33333vw;
-	opacity: 0.5;
-	color: #000
+  position: absolute;
+  left: 50%;
+  bottom: 4vw;
+  width: 26.66667vw;
+  margin-left: -13.33333vw;
+  opacity: 0.5;
+  color: #000;
 }
 
 .login-head .betfair-wrap p {
-	text-align: center;
-	font-size: 2.66667vw
+  text-align: center;
+  font-size: 2.66667vw;
 }
 
-
-
 .login-head h3 {
-	position: absolute;
-	left: 50%;
-	bottom: 5.33333vw
+  position: absolute;
+  left: 50%;
+  bottom: 5.33333vw;
 }
 
 .login-head .close {
-	position: fixed;
-	right: 1.86667vw;
-	justify-content: center;
-	align-items: center;
-	width: 9.33333vw;
-	height: 9.33333vw;
-	background-color: rgba(0, 0, 0, 0.7);
-	border-radius: 50%;
-	margin-top: 1.86667vw;
-	z-index: 2
+  position: fixed;
+  right: 1.86667vw;
+  justify-content: center;
+  align-items: center;
+  width: 9.33333vw;
+  height: 9.33333vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  margin-top: 1.86667vw;
+  z-index: 2;
 }
 
 .login-head .close:before {
-	content: "";
-	width: 3.46667vw;
-	height: 3.46667vw;
-	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="rgb(255,255,255)" fill-rule="evenodd" d="M9 .912L5.412 4.5 9 8.088 8.088 9 4.5 5.412.912 9 0 8.088 3.588 4.5 0 .912.912 0 4.5 3.588 8.088 0z"/></svg>') no-repeat;
-	background-size: contain
+  content: "";
+  width: 3.46667vw;
+  height: 3.46667vw;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="rgb(255,255,255)" fill-rule="evenodd" d="M9 .912L5.412 4.5 9 8.088 8.088 9 4.5 5.412.912 9 0 8.088 3.588 4.5 0 .912.912 0 4.5 3.588 8.088 0z"/></svg>')
+    no-repeat;
+  background-size: contain;
 }
 
 .login-pop {
-	background-image: linear-gradient(56deg, #ffcc2e 4%, #ffb80c 42%)
+  background-image: linear-gradient(56deg, #ffcc2e 4%, #ffb80c 42%);
 }
 
 .login-head,
 .login-pop .login-head {
-	background-image: url('../images/KV-pic.png')
+  background-image: url("../images/KV-pic.png");
 }
 .login_main {
   background: linear-gradient(56deg, #ffcc2e 4%, #ffb80c 42%);
@@ -614,20 +602,11 @@ img {
   margin: 0 auto;
 }
 
-
-
-
-.inPlayIcon::before{
-  content:"";
-  width:3.2vw;
-  height:3.2vw;
-  background:url('data:image/svg+xml,<svg width="20" height="21" xmlns="http://www.w3.org/2000/svg"><path d="M10 18.944c1.94 0 3.592-.718 4.953-2.154 1.362-1.436 2.042-3.165 2.042-5.189 0-2.023-.68-3.744-2.042-5.164-1.361-1.42-3.012-2.13-4.953-2.13-1.94 0-3.592.71-4.953 2.13-1.362 1.42-2.042 3.141-2.042 5.164 0 2.024.68 3.753 2.042 5.19 1.361 1.435 3.012 2.153 4.953 2.153zm0-16.741c2.504 0 4.632.922 6.385 2.766 1.753 1.843 2.63 4.054 2.63 6.632 0 2.579-.877 4.79-2.63 6.633C14.632 20.078 12.504 21 10 21s-4.632-.922-6.385-2.766C1.862 16.39.985 14.18.985 11.601c0-2.578.877-4.789 2.63-6.632C5.368 3.125 7.496 2.203 10 2.203zm.516 4.21v5.482l3.991 2.448-.751 1.272-4.742-2.937V6.413h1.502zM5.87 1.566L1.268 5.58 0 4.014 4.6 0 5.87 1.566zM20 4.014l-1.268 1.615-4.6-4.063L15.398 0 20 4.014z" fill="%23ffffff" fill-rule="evenodd"/></svg>') no-repeat;
-  background-size:contain
+.inPlayIcon::before {
+  content: "";
+  width: 3.2vw;
+  height: 3.2vw;
+  background: url('data:image/svg+xml,<svg width="20" height="21" xmlns="http://www.w3.org/2000/svg"><path d="M10 18.944c1.94 0 3.592-.718 4.953-2.154 1.362-1.436 2.042-3.165 2.042-5.189 0-2.023-.68-3.744-2.042-5.164-1.361-1.42-3.012-2.13-4.953-2.13-1.94 0-3.592.71-4.953 2.13-1.362 1.42-2.042 3.141-2.042 5.164 0 2.024.68 3.753 2.042 5.19 1.361 1.435 3.012 2.153 4.953 2.153zm0-16.741c2.504 0 4.632.922 6.385 2.766 1.753 1.843 2.63 4.054 2.63 6.632 0 2.579-.877 4.79-2.63 6.633C14.632 20.078 12.504 21 10 21s-4.632-.922-6.385-2.766C1.862 16.39.985 14.18.985 11.601c0-2.578.877-4.789 2.63-6.632C5.368 3.125 7.496 2.203 10 2.203zm.516 4.21v5.482l3.991 2.448-.751 1.272-4.742-2.937V6.413h1.502zM5.87 1.566L1.268 5.58 0 4.014 4.6 0 5.87 1.566zM20 4.014l-1.268 1.615-4.6-4.063L15.398 0 20 4.014z" fill="%23ffffff" fill-rule="evenodd"/></svg>')
+    no-repeat;
+  background-size: contain;
 }
-
-
-
-
-
-
-

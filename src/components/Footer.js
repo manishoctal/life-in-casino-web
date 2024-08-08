@@ -43,7 +43,7 @@ y
         </div>
       )} */}
       <nav>
-        <ul className="">
+        <ul className="bottom-navigation-menu">
           {/* <li id="mini" className="game-nav">
             <a
               href="javascript:void(0)"
