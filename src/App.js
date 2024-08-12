@@ -48,6 +48,7 @@ import ProfitLoss from "./pages/ProfitLoss/ProfitLoss";
 import Activitylog from "./pages/Activitylog";
 import Accountstatement from "./pages/Accountstatement";
 import WebView from "./pages/WebView";
+import SportsComingSoon from "./pages/sportsComingSoon";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -101,7 +102,8 @@ function App() {
         <Route exact path="/result" element={<Result />}></Route>
         <Route exact path="/profile" element={<Profile />}></Route>
         <Route exact path="/multiMarket" element={<MultiMarket />}></Route>
-        <Route exact path="/sports" element={<Sports />}></Route>
+        {/* <Route exact path="/sports" element={<Sports />}></Route> */}
+        <Route exact path="/sports" element={<SportsComingSoon />}></Route>
         <Route exact path="/sportsdetail" element={<SportsDetail />}></Route>
         <Route exact path="/payment-submit" element={<PaymentSubmit />}></Route>
         <Route exact path="/payment-withdraw-submit" element={<PaymentWithdrawSubmit />}></Route>
