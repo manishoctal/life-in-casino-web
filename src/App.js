@@ -61,28 +61,28 @@ function App() {
     }
   }, [user]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 767 && !redirected) {
-        // Redirect the user to the mobile app installation page
-        setRedirected(true);
-        window.location.href = '/web-view';
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth > 767 && !redirected) {
+  //       // Redirect the user to the mobile app installation page
+  //       setRedirected(true);
+  //       window.location.href = '/web-view';
+  //     }
+  //   };
 
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
+  //   // Add event listener for window resize
+  //   window.addEventListener('resize', handleResize);
 
-    // Check screen size on component mount
-    if(window?.location?.pathname !== '/web-view'){
-      handleResize();
-    }
+  //   // Check screen size on component mount
+  //   if(window?.location?.pathname !== '/web-view'){
+  //     handleResize();
+  //   }
 
-    // Remove event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [redirected]);
+  //   // Remove event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, [redirected]);
 
   return (
     <div className="App">
